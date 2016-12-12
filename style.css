@@ -1,0 +1,51 @@
+
+
+.h1
+{
+}
+
+.h1
+{
+}
+
+h1
+{
+    font-weight: bolder;
+    vertical-align: text-bottom;
+    font-size: 72px;
+}
+
+#hero
+{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+h1 img
+{
+    vertical-align: baseline;
+}
+
+h2
+{
+    font-weight: normal;
+}
+
+*
+{
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+
+.container
+{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#herotext
+{
+    font-size: 24px;
+}
+
