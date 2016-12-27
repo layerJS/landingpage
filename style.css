@@ -15,10 +15,21 @@ h1
     font-size: 72px;
 }
 
-#hero
-{
+#hero {
     padding-top: 100px;
     padding-bottom: 100px;
+    color: rgb(240,240,240);
+    height: 500px;
+    margin-bottom: -100px;
+    padding: 106px 0;
+    clip-path: polygon(0% 0%,100% 0%,100% 80%,0% 100%);
+    -webkit-clip-path: polygon(0% 0%,100% 0%,100% 80%,0% 100%);
+    /* border-bottom: 100px solid red; */
+    /* border-left: 50px solid transparent; */
+    background: -moz-linear-gradient(left, rgba(15,138,148,1) 0%, rgba(148,240,145,0.65) 100%);
+    background: -webkit-linear-gradient(left, rgba(15,138,148,1) 0%,rgba(148,240,145,0.65) 100%);
+    background: linear-gradient(to right, rgba(15,138,148,1) 0%,rgba(148,240,145,0.65) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f8a94', endColorstr='#a694f091',GradientType=1 )
 }
 
 h1 img
@@ -37,15 +48,117 @@ h2
     box-sizing: border-box;
 }
 
-
 .container
 {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px;
 }
 
 #herotext
 {
     font-size: 24px;
+}
+
+.grey
+{
+    background-color: #eee;
+}
+
+.howto-step
+{
+    margin-bottom: 50px;
+}
+
+.howto-step-img
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-top: 27px;
+}
+
+.whitebox
+{
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 15px;
+}
+
+.whitebox h4
+{
+    background-color: #60C694;
+    margin: -15px;
+    margin-bottom: 0px;
+    padding: 10px;
+}
+
+.whitebox a
+{
+    position: absolute;
+    bottom: 50px;
+    right: 40px;
+}
+
+pre
+{
+    background-color: inherit;
+    border: none;
+    border-radius: 0px;
+    margin: 0px;
+    white-space: pre;
+}
+
+
+.shadow-down
+{
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    box-shadow: 0px 0px 10px 1px black;
+    -webkit-clip-path: polygon(0px 0px,0px 20px, 100% 20px, 100% 0px);
+    -moz-clip-path: polygon(0px 0px,0px 20px, 100% 20px, 100% 0px);
+    clip-path: polygon(0px 0px,0px 20px, 100% 20px, 100% 0px);
+}
+
+.shadow-up
+{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: px;
+    box-shadow: 0px 0px 10px 1px black;
+    -webkit-clip-path: polygon(0px 0px,0px -20px, 100% -20px, 100% 0px);
+    -moz-clip-path: polygon(0px 0px,0px -20px, 100% -20px, 100% 0px);
+    clip-path: polygon(0px 0px,0px -20px, 100% -20px, 100% 0px);
+}
+
+.lines
+{
+    background-color: #60C694;
+    text-align: right;
+}
+
+.inset
+{
+    overflow: hidden;
+    background-color: white;
+}
+
+.inset-box
+{
+    position: relative;
+    z-index: 10;
+    height: 0px;
+    width: 100%;
+    box-shadow: 0px 0px 10px 1px black;
+}
+
+.btn-key
+{
+    background-color: #60C694;
+}
+
+.btn-key:hover
+{
+    background-color: #359364;
 }
 
