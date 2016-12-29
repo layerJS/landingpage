@@ -104,9 +104,7 @@ pre
     border: none;
     border-radius: 0px;
     margin: 0px;
-    white-space: pre;
 }
-
 
 .shadow-down
 {
@@ -161,4 +159,39 @@ pre
 {
     background-color: #359364;
 }
+
+[data-annotate] pre
+{
+    padding: 0px;
+    font-size: 11px;
+    white-space: pre-wrap;
+}
+
+[data-annotate] .anno-code pre:nth-child(even)
+{
+    background-color: #f8f8f8;
+}
+
+[data-annotate]>div
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 11px;
+}
+
+[data-annotate] div, [data-annotate] pre, [data-annotate] code, [data-annotate] span
+{
+    font-size: 11px;
+}
+
+.example-headline
+{
+    padding-bottom: 20px;
+}
+
+.example-container:nth-child(4n+2)
+{
+    background-color: #f8f8f8;
+}
+
 
