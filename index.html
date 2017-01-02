@@ -16,191 +16,124 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="https://cdn.layerjs.org/libs/layerjs/layerjs-0.3.1.js"></script>
-    <link href="https://cdn.layerjs.org/libs/layerjs/layerjs-0.3.1.css" type="text/css" rel="stylesheet" />
+    <script src="https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.js"></script>
+    <link href="https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.css" type="text/css" rel="stylesheet" />
+    <link href="assets/font/stylesheet.css" type="text/css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js" integrity="sha256-+mpyNVJsNt4rVXCw0F+pAOiB3YxmHgrbJsx4ecPuUaI=" crossorigin="anonymous" async></script>
     <script src="assets/js/annotate.js" async></script>
     <link rel="stylesheet" href="hljs.css" />
   </head>
-  <body>
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Brand</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active">
-              <a href="#">Link</a>
-            </li>
-            <li>
-              <a href="#">Link</a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="#">Action</a>
-                </li>
-                <li>
-                  <a href="#">Another action</a>
-                </li>
-                <li>
-                  <a href="#">Something else here</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a href="#">Separated link</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a href="#">One more separated link</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="#">Link</a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="#">Action</a>
-                </li>
-                <li>
-                  <a href="#">Another action</a>
-                </li>
-                <li>
-                  <a href="#">Something else here</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a href="#">Separated link</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <section id="hero">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 text-right">
-            <h1><img src="assets/img/logo1.png" width="100">&nbsp;layerJS&nbsp;</h1>
-          </div>
-          <div class="col-md-6">
-            <h2 id="herotext">lean, opensource UX composition library for modern websites and webapps</h2>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="grey" style="height:100px;"></section>
-    <section class="grey">
-      <div class="container">
-        <h2> One concept - one library</h2>
-        <p>General UX patterns like menus, sliders, layers &amp;&nbsp;lightboxes, parallax effects, page-swipes, zoom effects are really just visual elements on interactive animated layers. layerJS provides <strong>one</strong>&nbsp;simple universal concept in&nbsp;<strong>one</strong>&nbsp;single javascript library to create such patterns in a most flexible way.&nbsp;<br></p>
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <h2>How layerJS works - Stages &amp; Frames</h2>
-        <div class="row howto-step">
-          <div class="col-xs-12 col-sm-4">
-            <img class="howto-step-img" src="assets/img/frames.svg" width="300" style="padding-top:30px;">
-          </div>
-          <div class="col-xs-12 col-sm-8">
+  <body lj-type="stage">
+    <div lj-type="layer" lj-name="contentlayer">
+      <div lj-type="frame" lj-name="contentframe" lj-fit-to="responsive-width">
+        <section id="hero">
+          <div class="container">
             <div class="row">
-              <div class="col-xs-2">
-                <h3 class="pull-right">1.</h3>
+              <div class="col-md-6 text-right">
+                <h1><img src="assets/img/logo1.png" width="100">&nbsp;layerJS&nbsp;</h1>
               </div>
-              <div class="col-xs-10">
-                <h3>Organize content in Frames</h3>
-                <p>Instead of creating complete HTML pages with code for menues or sliders, simply design all parts of your site as separate static HTML &amp; CSS fragements, the Frames.</p>
+              <div class="col-md-6">
+                <h2 id="herotext"><br>a lean, opensource UI composition &amp; animation library for modern websites and webapps<br><br></h2>
               </div>
             </div>
           </div>
-        </div>
-        <div class="row howto-step">
-          <div class="clearfix col-xs-12 col-sm-4">
-            <img class="howto-step-img" src="assets/img/stages.svg" width="200" style="padding-top:30px;">
+        </section>
+        <section class="grey" style="height:100px;"></section>
+        <section class="grey">
+          <div class="container">
+            <h2> One concept - one library</h2>
+            <p>General UX patterns like menus, sliders, layers &amp;&nbsp;lightboxes, parallax effects, page-swipes, zoom effects are really just visual elements on interactive animated layers. layerJS provides <strong>one</strong>&nbsp;simple universal concept
+            in&nbsp;<strong>one</strong>&nbsp;single javascript library to create such patterns in a most flexible way.&nbsp;<br></p>
           </div>
-          <div class="col-xs-12 col-sm-8">
+        </section>
+        <section>
+          <div class="container">
+            <h2>How layerJS works - Stages &amp; Frames</h2>
+            <div class="row howto-step">
+              <div class="col-xs-12 col-sm-4">
+                <img class="howto-step-img" src="assets/img/frames.svg" width="300" style="padding-top:30px;">
+              </div>
+              <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                  <div class="col-xs-2">
+                    <h3 class="pull-right">1.</h3>
+                  </div>
+                  <div class="col-xs-10">
+                    <h3>Organize content in Frames</h3>
+                    <p>Instead of creating complete HTML pages with code for menues or sliders, simply design all parts of your site as separate static HTML &amp; CSS fragments, the Frames.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row howto-step">
+              <div class="clearfix col-xs-12 col-sm-4">
+                <img class="howto-step-img" src="assets/img/stages.svg" width="200" style="padding-top:30px;">
+              </div>
+              <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                  <div class="col-xs-2">
+                    <h3 class="pull-right">2.</h3>
+                  </div>
+                  <div class="col-xs-10">
+                    <h3>Stages define positions</h3>
+                    <p>Stages define the areas where the Frames (page-content, menu-panes, lightbox content, slides) will be displayed dynamically in your final page.&nbsp;</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row howto-step">
+              <div class="clearfix col-xs-12 col-sm-4">
+                <img class="howto-step-img" src="assets/img/transition.svg" width="300" style="padding-top:30px;">
+              </div>
+              <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                  <div class="col-xs-2">
+                    <h3 class="pull-right">3.</h3>
+                  </div>
+                  <div class="col-xs-10">
+                    <h3>UI composition &amp; state transitions</h3>
+                    <p>Frames are dynamically fit into Stages to compose the final user interface. Upon user interaction, the state of the user interface changes by exchange one or more Frames in the Stages.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <h2> Why layerJS is different</h2>
             <div class="row">
-              <div class="col-xs-2">
-                <h3 class="pull-right">2.</h3>
+              <div class="col-md-4">
+                <img src="assets/img/iconHTML.png" width="150" class="column-icon">
+                <h3 class="text-center">Just HTML</h3>
+                <p>With layerJS the full layout and interactivity can be defined by pure CSS and HTML</p>
               </div>
-              <div class="col-xs-10">
-                <h3>Stages define positions</h3>
-                <p>Stages define the areas where the Frames (page-content, menu-panes, lightbox content, slides) will be displayed dynamically in your final page.&nbsp;</p>
+              <div class="col-md-4">
+                <img src="assets/img/iconstar.png" class="column-icon">
+                <h3 class="text-center">Full flexiblity</h3>
+                <p>layerJS does not provide a single effect with a given design but rather handles transitions of emtpy boxes that you can fill with your design.</p>
+              </div>
+              <div class="col-md-4">
+                <img src="assets/img/icongestures.png" class="column-icon">
+                <h3 class="text-center">A framework</h3>
+                <p>layerJS does not just provide transition effects but a full framework including gesture support, a router and an API.</p>
               </div>
             </div>
           </div>
-        </div>
-        <div class="row howto-step">
-          <div class="clearfix col-xs-12 col-sm-4">
-            <img class="howto-step-img" src="assets/img/transition.svg" width="300" style="padding-top:30px;">
+        </section>
+        <section class="grey">
+          <div class="container">
+            <h2>Getting started</h2>
+            <p>To use layerJS you just need to define the stages and put all content in frames. The following list gives you minimal examples for common UX patterns. Feel free to combine them to your liking.</p>
           </div>
-          <div class="col-xs-12 col-sm-8">
+          <div class="container example-container">
+            <h3 class="text-center example-headline">Slider</h3>
             <div class="row">
-              <div class="col-xs-2">
-                <h3 class="pull-right">3.</h3>
-              </div>
-              <div class="col-xs-10">
-                <h3>UI composition &amp; state transitions</h3>
-                <p>Frames are dynamically fit into Stages to compose the final user interface. Upon user interaction, the state of the user interface changes by exchange one or more Frames in the Stages.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <h2> Why layerJS is different</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <h3>Just HTML</h3>
-            <p>With layerJS the full layout and interactivity can be defined by pure CSS and HTML</p>
-          </div>
-          <div class="col-md-4">
-            <h3>A framework</h3>
-            <p>layerJS does not just provide transition effects but provides a full framework for state and interactions, including gestures, links/url, and API</p>
-          </div>
-          <div class="col-md-4">
-            <h3>Full flexiblity</h3>
-            <p>most libraries have one special effect and often limit design. layerJS just animates empty frames in empty layers so you can add every kind of design layout you want</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="grey">
-      <div class="container">
-        <h2>Getting started</h2>
-        <p>To use layerJS you just need to define the stages and put all content in frames. The following list gives you minimal examples for common UX patterns. Feel free to combine them to your liking.</p>
-      </div>
-      <div class="container example-container">
-        <h3 class="text-center example-headline">Slider</h3>
-        <div class="row">
-          <div class="col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-0">
-            <div class="whitebox">A slider needs a single stage, a layer and one frame for each slide. Controls can be placed on a second overlapping layer. Controls are regular links that link to specific frames or use special links like "#!next" or "#!prev"</div>
-            <div class="whitebox">
-              <h4>Sample Code</h4>
-              <pre>
+              <div class="col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-0">
+                <div class="whitebox">A slider needs a single stage, a layer and one frame for each slide. Controls can be placed on a second overlapping layer. Controls are regular links that link to specific frames or use special links like "#!next" or "#!prev"</div>
+                <div class="whitebox">
+                  <h4 class="sample-header">Sample code</h4>
+                  <pre>
 &lt;div lj-type=&quot;stage&quot;&gt;
   &lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;frame1&quot;&gt;
     &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot;&gt;
@@ -209,33 +142,31 @@
     &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame2&quot;&gt;
       ... content of frame 2 ...
     &lt;/div&gt;
-    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame3&quot;&gt;
-      ... content of frame 3 ...
-    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
-              <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels1" href="#collapse1">Show documented code</a>
+                  <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels1" href="#collapse1">Show full HTML</a>
+                </div>
+              </div>
+              <div class="col-md-5 col-sm-6">
+                <h4 class="sample-header">Try here</h4>
+                <iframe src="https://cdn.layerjs.org/examples/slider/index.html" width="100%" height="450px;" frameborder="0"></iframe>
+              </div>
             </div>
           </div>
-          <div class="col-md-5 col-sm-6">
-            <iframe src="https://cdn.layerjs.org/examples/slider/index.html" width="100%" height="500px;" frameborder="0"></iframe>
-          </div>
-        </div>
-      </div>
-      <div class="row inset hidden-xs" style="margin: 0px;">
-        <div class="inset-box">
+          <div class="row inset hidden-xs" style="margin: 0px;">
+            <div class="inset-box">
 </div>
-        <div id="panels1">
-          <div>
-            <div id="collapse1" class="panel-collapse collapse">
-              <div id="example1" class="panel-body" style="padding: 0px;" data-annotate data-annotate-lang="html">
-                <div class="col-sm-3 col-sm-offset-1 annotation">
+            <div id="panels1">
+              <div>
+                <div id="collapse1" class="panel-collapse collapse">
+                  <div id="example1" class="panel-body" style="padding: 0px;" data-annotate data-annotate-lang="html">
+                    <div class="col-sm-3 col-sm-offset-1 annotation">
 </div>
-                <div class="col-sm-1 anno-lines lines">
+                    <div class="col-sm-1 anno-lines lines">
 </div>
-                <div class="col-sm-6 anno-code clearfix">
+                    <div class="col-sm-6 anno-code clearfix">
 </div>
-                <pre>
+                    <pre>
 &lt;html&gt;
 &lt;head&gt;
   &lt;script src=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.js&quot;&gt;&lt;/script&gt; //Import layerJS javascript and css files.
@@ -246,7 +177,7 @@
   &lt;div lj-type=&quot;stage&quot;&gt; // Define a single stage.
     // Define the layer &quot;slider&quot; for the slides.
     // The default frame is &quot;frame1&quot;
-    &lt;div lj-type=&quot;layer&quot; lj-name=&quot;slider&quot; lj-default-frame=&quot;frame1&quot; lj-native-scroll=&quot;false&quot;&gt; 
+    &lt;div lj-type=&quot;layer&quot; lj-name=&quot;slider&quot; lj-default-frame=&quot;frame1&quot; lj-native-scroll=&quot;false&quot;&gt;
       // Define one frame per slide.
       // lj-fit-to=&quot;cover&quot; will make sure that the stage will be fully filled with the frame.
       // &quot;neighbors.l&quot;/&quot;r&quot; define which frames will be transitioned to upon left/right swipe gestures.
@@ -275,55 +206,58 @@
   &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="inset-box clearfix">
+            <div class="inset-box clearfix">
 </div>
-      </div>
-      <div class="container example-container">
-        <h3 class="text-center example-headline">Parallax</h3>
-        <div class="row">
-          <div class="col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-0">
-            <div class="whitebox">Parallax effects can be created with two overlapping layers in a stage. If the frame in the upper layer is longer than the stage, it will scroll within the stage. Transparent areas in this frame will reveal the lower non-scrolling frame created the parallax effect.</div>
-            <div class="whitebox">
-              <h4>Sample Code</h4>
-              <pre>
-&lt;div lj-type=&quot;stage&quot;&gt; 
-  &lt;div lj-type=&quot;layer&quot;&gt; 
-    &lt;div lj-type=&quot;frame&quot; lj-fit-to=&quot;cover&quot;&gt; 
-      &lt;img src=&quot;img/prezi.png&quot;&gt;
+          </div>
+          <div class="container example-container">
+            <h3 class="text-center example-headline">Parallax</h3>
+            <div class="row">
+              <div class="col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-0">
+                <div class="whitebox">Parallax effects can be created with two overlapping layers in a stage. If the frame in the upper layer is longer than the stage, it will scroll within the stage. Transparent areas in this frame will reveal the lower non-scrolling frame
+                  created the parallax effect.
+</div>
+                <div class="whitebox">
+                  <h4 class="sample-header">Sample code</h4>
+                  <pre>
+&lt;div lj-type=&quot;stage&quot;&gt;
+  &lt;div lj-type=&quot;layer&quot;&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-fit-to=&quot;cover&quot;&gt;
+      &lt;img src=&quot;img/background.png&quot;&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div lj-type=&quot;layer&quot;&gt;
-    &lt;div lj-type=&quot;frame&quot;&gt; 
-    &lt;/div&gt;
+    &lt;div lj-type=&quot;frame&quot;&gt;
       ... content ...
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
-              <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels2" href="#collapse2">Show documented code</a>
+                  <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels2" href="#collapse2">Show full HTML<br></a>
+                </div>
+              </div>
+              <div class="col-md-5 col-sm-6">
+                <h4 class="sample-header">Try here</h4>
+                <iframe src="https://cdn.layerjs.org/examples/parallax/index.html" width="100%" height="450px;" frameborder="0"></iframe>
+              </div>
             </div>
           </div>
-          <div class="col-md-5 col-sm-6">
-            <iframe src="https://cdn.layerjs.org/examples/parallax/index.html" width="100%" height="500px;" frameborder="0"></iframe>
-          </div>
-        </div>
-      </div>
-      <div class="row inset hidden-xs" style="margin: 0px;">
-        <div class="inset-box">
+          <div class="row inset hidden-xs" style="margin: 0px;">
+            <div class="inset-box">
 </div>
-        <div id="panels2">
-          <div>
-            <div id="collapse2" class="panel-collapse collapse">
-              <div id="example2" class="panel-body" style="padding: 0px;" data-annotate data-annotate-lang="html">
-                <div class="col-sm-3 col-sm-offset-1 annotation">
+            <div id="panels2">
+              <div>
+                <div id="collapse2" class="panel-collapse collapse">
+                  <div id="example2" class="panel-body" style="padding: 0px;" data-annotate data-annotate-lang="html">
+                    <div class="col-sm-3 col-sm-offset-1 annotation">
 </div>
-                <div class="col-sm-1 anno-lines lines">
+                    <div class="col-sm-1 anno-lines lines">
 </div>
-                <div class="col-sm-6 anno-code clearfix">
+                    <div class="col-sm-6 anno-code clearfix">
 </div>
-                <pre>
+                    <pre>
 &lt;html&gt;
 &lt;head&gt;
   &lt;meta name=&quot;description&quot; content=&quot;parallax effect&quot;&gt;
@@ -366,175 +300,269 @@
   &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="inset-box clearfix">
-</div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-2">
-            <h3>Parallax effect</h3>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          </div>
-          <div class="col-md-5">
-            <h4>Sample Code</h4>
-            <pre><code class="html">
-&lt;div lj-type="stage"&gt;
-    &lt;div lj-type="layer"&gt;
-      &lt;div lj-type="frame" lj-name="bg"&gt;
-        &lt;img src="//cdn.layerjs.org/img/trianglepattern.png"&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div lj-type="layer"&gt;
-      &lt;div lj-type="frame" lj-name="frame1"&gt;
-        &lt;div class="p"&gt;
-          Lorem ipsum ...
-        &lt;/div&gt;
-        &lt;div class="slot"&gt;&lt;/div&gt;
-        &lt;div class="p"&gt;
-          Li Europan lingues
-        &lt;/div&gt;
-        &lt;div class="window"&gt;&lt;/div&gt;
-        &lt;div class="p"&gt;
-          Lorem ipsum ...
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;</code></pre>
-          </div>
-          <div class="col-md-5">
-            <div lj-type="stage" style="width:100%;height:420px">
-              <div lj-type="layer">
-                <div lj-type="frame" lj-name="bg" lj-neighbors.r="frame2">
-                  <img src="//cdn.layerjs.org/img/trianglepattern.png">
-                </div>
-              </div>
-              <div lj-type="layer">
-                <div lj-type="frame" lj-name="frame1">
-                  <div class="p">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-</div>
-                  <div class="slot">
-</div>
-                  <div class="p">
-                    Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles.
-</div>
-                  <div class="window">
-</div>
-                  <div class="p">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-2">
-            <h3>Parallax effect</h3>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          </div>
-          <div class="col-md-5">
-            <h4>Sample Code</h4>
-            <pre><code class="html">
-&lt;div lj-type="stage"&gt;
-    &lt;div lj-type="layer"&gt;
-      &lt;div lj-type="frame" lj-name="bg"&gt;
-        &lt;img src="//cdn.layerjs.org/img/trianglepattern.png"&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div lj-type="layer"&gt;
-      &lt;div lj-type="frame" lj-name="frame1"&gt;
-        &lt;div class="p"&gt;
-          Lorem ipsum ...
-        &lt;/div&gt;
-        &lt;div class="slot"&gt;&lt;/div&gt;
-        &lt;div class="p"&gt;
-          Li Europan lingues
-        &lt;/div&gt;
-        &lt;div class="window"&gt;&lt;/div&gt;
-        &lt;div class="p"&gt;
-          Lorem ipsum ...
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;</code></pre>
-          </div>
-          <div lj-type="stage" class="col-md-5" style="height: 500px;">
-            <div lj-type="layer" lj-default-frame="frame1">
-              <div lj-type="frame" lj-name="frame1" lj-fit-to="responsive-width">
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                <a href="#box-layer.box1?p=fade&t=0.2s">see more ...</a>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-              </div>
-            </div>
-            <div lj-type="layer" lj-default-frame="!none" lj-name="box-layer" lj-native-scroll="false">
-              <div lj-type="frame" lj-name="box1" lj-fit-to="responsive" class="modal">
-                <div class="modal-inner">
-                  <div>
-                    <a href="#box-layer.!none?t=0.2s&p=fade" class="close">&#x2573;</a>
                   </div>
-                  <h1>A modal</h1>
-                  <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat</p>
                 </div>
               </div>
             </div>
+            <div class="inset-box clearfix">
+</div>
           </div>
+          <div class="container example-container">
+            <h3 class="text-center example-headline">Side menu</h3>
+            <div class="row">
+              <div class="col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-0">
+                <div class="whitebox">A layer can be used to create a menu floating on top of the regular content. The menu can be opened and closed using layerJS transitions between two or more frames representing the open and closed state.</div>
+                <div class="whitebox">
+                  <h4 class="sample-header">Sample code</h4>
+                  <pre>
+&lt;div lj-type="stage"&gt;
+  &lt;div lj-type="layer" lj-default-frame="frame1"&gt;
+    &lt;div lj-type="frame" lj-name="frame1"&gt;
+      ... page content ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div lj-type="layer" lj-name="menulayer"&gt;
+    &lt;div lj-type="frame" lj-name="menu-closed"&gt;
+        &lt;a href="#menu-open"&gt;Menu&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div lj-type="frame" lj-name="menu-open"&gt;
+      &lt;a href="#menu-closed"&gt;close&lt;/a&gt;
+      &lt;ul class="nav-list"&gt;
+        ... menu items ...
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+                  <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels3" href="#collapse3">Show full HTML<br></a>
+                </div>
+              </div>
+              <div class="col-md-5 col-sm-6">
+                <h4 class="sample-header">Try here</h4>
+                <iframe src="https://cdn.layerjs.org/examples/sidemenu/index.html" width="100%" height="450px;" frameborder="0"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="row inset hidden-xs" style="margin: 0px;">
+            <div class="inset-box">
+</div>
+            <div id="panels3">
+              <div>
+                <div id="collapse3" class="panel-collapse collapse">
+                  <div id="example3" class="panel-body" style="padding: 0px;" data-annotate data-annotate-lang="html">
+                    <div class="col-sm-3 col-sm-offset-1 annotation">
+</div>
+                    <div class="col-sm-1 anno-lines lines">
+</div>
+                    <div class="col-sm-6 anno-code clearfix">
+</div>
+                    <pre>
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.js&quot;&gt;&lt;/script&gt; // Include layerJS.
+  &lt;link href=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+  &lt;link href=&quot;https://cdn.layerjs.org/libs/examples/sidemenu/your-style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt; // Additional styling
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div lj-type=&quot;stage&quot;&gt; // Add a stage.
+    &lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;frame1&quot;&gt; // The layer for the main content
+      &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot; class=&quot;content&quot; lj-fit-to=&quot;responsive-width&quot;&gt; // The content of the current page
+        &lt;p&gt; Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+          sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+          duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
+        &lt;p&gt; Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+          sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+          duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div lj-type=&quot;layer&quot; lj-name=&quot;menulayer&quot; lj-native-scroll=&quot;false&quot;&gt; // The layer for the menu on top of the main content
+      &lt;div lj-type=&quot;frame&quot; lj-name=&quot;hmenu&quot; class=&quot;nav&quot; lj-fit-to=&quot;responsive-width&quot;&gt; // The frame for the menu in the closed state
+        &lt;div class=&quot;nav-hor&quot;&gt;
+          &lt;a href=&quot;#menu?p=slideOverRightFade&amp;t=0.5s&quot;&gt;&amp;#x2630; Menu&lt;/a&gt; // Link to open state with parameters that control the animation type and the timing.
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div lj-type=&quot;frame&quot; lj-name=&quot;menu&quot; class=&quot;nav menu&quot; lj-fit-to=&quot;responsive-height&quot; lj-neighbors.r=&quot;hmenu&quot;&gt; // The frame for the menu in the open state. The "neighbors" attribute allows swipe gestures to close the menu.
+        &lt;a href=&quot;#hmenu?t=0.5s&amp;p=slideAwayLeftFade&quot; class=&quot;close&quot;&gt;&amp;#x2573;&lt;/a&gt; // The close button with a link to the closed state.
+        &lt;ul class=&quot;nav-list&quot;&gt;
+          &lt;li class=&quot;nav-item&quot;&gt;
+            Menu 1
+          &lt;/li&gt;
+          &lt;li class=&quot;nav-item&quot;&gt;
+            Menu 2
+          &lt;/li&gt;
+          &lt;li class=&quot;nav-item&quot;&gt;
+            Menu 3
+          &lt;/li&gt;
+          &lt;li class=&quot;nav-item&quot;&gt;
+            Menu 4
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+    layerJS.init(); // initialize layerJS
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="inset-box clearfix">
+</div>
+          </div>
+          <div class="container example-container">
+            <h3 class="text-center example-headline">Lightbox / Modal</h3>
+            <div class="row">
+              <div class="col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-0">
+                <div class="whitebox">A lighbox, modal or pop-up can be easily created with a layer on top of the content which initially does not show a frame. This layer can be filled with a lightbox' content upon link click.</div>
+                <div class="whitebox">
+                  <h4 class="sample-header">Sample code</h4>
+                  <pre>
+&lt;div lj-type=&quot;stage&quot;&gt;
+  &lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;frame1&quot;&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot;&gt;
+      ... page content ...
+      &lt;a href=&quot;#box-layer.box1&gt;click here ...&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;!none&quot; lj-name=&quot;box-layer&quot;&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;box1&quot;&gt;
+      ... modal content ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+                  <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels4" href="#collapse4">Show full HTML<br></a>
+                </div>
+              </div>
+              <div class="col-md-5 col-sm-6">
+                <h4 class="sample-header">Try here</h4>
+                <iframe src="https://cdn.layerjs.org/examples/lightbox/index.html" width="100%" height="450px;" frameborder="0"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="row inset hidden-xs" style="margin: 0px;">
+            <div class="inset-box">
+</div>
+            <div id="panels4">
+              <div>
+                <div id="collapse4" class="panel-collapse collapse">
+                  <div id="example4" class="panel-body" style="padding: 0px;" data-annotate data-annotate-lang="html">
+                    <div class="col-sm-3 col-sm-offset-1 annotation">
+</div>
+                    <div class="col-sm-1 anno-lines lines">
+</div>
+                    <div class="col-sm-6 anno-code clearfix">
+</div>
+                    <pre>
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.js&quot;&gt;&lt;/script&gt; // Include layerJS.
+  &lt;link href=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+  &lt;link href=&quot;your-style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt; // Additional styling
+&lt;/head&gt;
+&lt;body lj-type=&quot;stage&quot;&gt; // Add a stage.
+  &lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;frame1&quot;&gt; // The layer for the main content
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot; lj-fit-to=&quot;responsive-width&quot;&gt; // The content frame
+      &lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      &lt;/p&gt;
+      &lt;a href=&quot;#box-layer.box1?p=fade&amp;t=0.2s&quot;&gt;click here ...&lt;/a&gt; // The link opening the lighbox including animation parameters
+      &lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;!none&quot; lj-name=&quot;box-layer&quot; lj-native-scroll=&quot;false&quot;&gt; // The layer for the lightbox. The initial frame is the special frame &quot;!none&quot; which repesents an empty layer.
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;box1&quot; lj-fit-to=&quot;responsive&quot; class=&quot;modal&quot;&gt; // The content of the modal.
+      &lt;div class=&quot;modal-inner&quot;&gt;
+        &lt;div&gt;
+          &lt;a href=&quot;#box-layer.!none?t=0.2s&amp;p=fade&quot; class=&quot;close&quot;&gt;&amp;#x2573;&lt;/a&gt; // A Link as close button which resets the active frame of the lighbox layer to &quot;!none&quot;
+        &lt;/div&gt;
+        &lt;h1&gt;A modal&lt;/h1&gt;
+        &lt;p&gt;
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+    layerJS.init(); //Initialize layerJS
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="inset-box clearfix">
+</div>
+          </div>
+        </section>
+        <footer>
+          <div class="row">
+            <div class="col-sm-6 col-lg-4 col-md-5 col-md-offset-1 col-lg-offset-2">
+              <ul>
+                <li>
+                  <a href="https://github.com/layerJS/layerJS/">Github</a>
+                </li>
+                <li>
+                  <a href="https://raw.githubusercontent.com/layerJS/layerJS/master/LICENSE">License</a>
+                </li>
+                <li>
+                  <a href="https://github.com/layerJS/layerJS/wiki#how-to-contribute">How to contribute</a>
+                </li>
+                <li>
+                  <a href="https://github.com/layerJS/layerJS/wiki">Documentation</a>
+                </li>
+                <li>
+                  <a href="impressum.html">Impressum</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <ul>
+                <li>
+                  &copy; 2016-2017 the layerJS team.
+</li>
+                <li>
+                  For questions or comments please contact us at
+                  <a href="mailto:developers@layerjs.org">developer@layerjs.org</a>
+                </li>
+                <li>
+                  Follow us on:
+</li>
+                <li class="social-share">
+                  <a href="https://fb.com/layerjs">
+                    <img src="assets/img/facebook.svg">
+                  </a>
+                  <a href="https://twitter.com/layerjs">
+                    <img src="assets/img/twitter.svg">
+                  </a>
+                  <a href="mailto:developers@layerjs.org">
+                    <img src="assets/img/email.svg">
+                  </a>
+                </li>
+              </ul>               
+            </div>
+          </div>           
+        </footer>
+      </div>
+    </div>
+    <div lj-type="lj-layer" lj-name="menulayer" lj-native-scroll="false" lj-default-frame="!none">
+      <nav lj-type="frame" lj-name="menuframe" lj-fit-to="responsive-width" style="list-style: none;">
+        <a href="index.html"><h1 class="pull-left"><img src="assets/img/logo1.png" width="50"><span class="hidden-xs">&nbsp;layerJS</span></h1></a>
+        <div class="pull-right nav-items">
+          <form>
+            <input type="text" class="form-control" placeholder="enter your email for news">
+            <button type="submit" class="btn btn-key">Signup</button>
+          </form>
+          <a href="https://github.com/layerJS/layerJS" class="hidden-xs btn-default btn btn-key">find us on Github</a>
         </div>
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <h2>Advanced responsive posibilities</h2>
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <img src="../assets/ux.png" alt="">
-              <div class="caption">
-                <h3>UX simplified</h3>
-                <p>create UX elements with a single universal concept<br></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <img src="../assets/html.png" alt="">
-              <div class="caption">
-                <h3>Just markup</h3>
-                <p>You do the HTML; layerJS does the interactions; no extra code </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <img src="../assets/touch.png" alt="">
-              <div class="caption">
-                <h3>Gestures included<br></h3>
-                <p>Mobile app like user experiences including gestures<br></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="panel-footer">Panel footer</div>
+      </nav>
+    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -543,8 +571,8 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
     <script>
-            layerJS.init();
-        </script>
+    layerJS.init();
+  </script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js" integrity="sha256-+mpyNVJsNt4rVXCw0F+pAOiB3YxmHgrbJsx4ecPuUaI=" crossorigin="anonymous"></script>
         <script>
   hljs.initHighlightingOnLoad();

@@ -10,9 +10,10 @@
 
 h1
 {
-    font-weight: bolder;
+    font-weight: bold;
     vertical-align: text-bottom;
     font-size: 72px;
+    white-space: nowrap;
 }
 
 #hero {
@@ -55,7 +56,6 @@ h2
 
 #herotext
 {
-    font-size: 24px;
 }
 
 .grey
@@ -83,12 +83,17 @@ h2
     padding: 15px;
 }
 
-.whitebox h4
+.sample-header
 {
     background-color: #60C694;
+    margin: 0px;
+    padding: 10px;
+}
+
+.whitebox .sample-header
+{
     margin: -15px;
     margin-bottom: 0px;
-    padding: 10px;
 }
 
 .whitebox a
@@ -194,4 +199,113 @@ pre
     background-color: #f8f8f8;
 }
 
+html
+{
+    height: 100%;
+}
+
+body
+{
+    height: 100%;
+    font-family: texgyreheros, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+[lj-type="frame"], [data-lj-type="frame"]
+{
+    width: 100%;
+    z-index: 0;
+}
+
+nav img
+{
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+nav
+{
+    background-color: white;
+    line-height: 70px;
+}
+
+nav a
+{
+    color: black;
+    text-decoration: none;
+}
+
+nav a:hover
+{
+}
+
+nav h1
+{
+    margin: 0px;
+    padding: 10px;
+}
+
+nav h1, nav h1 *
+{
+    font-size: 40px;
+}
+
+nav>.nav-items>*
+{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav form .form-control
+{
+    display: inline-block;
+    width: 200px;
+}
+
+.column-icon
+{
+    display: block;
+    margin: auto;
+    width: 150px;
+    padding: 10px;
+}
+
+footer ul
+{
+    list-style: none;
+}
+
+footer a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+footer a:hover
+{
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: inherit;
+}
+
+footer
+{
+    background-color: #58585A;
+    color: #eee;
+    padding: 30px;
+}
+
+footer *
+{
+    font-size: 14px;
+}
+
+.social-share img
+{
+    width: 25px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
 
