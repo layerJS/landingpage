@@ -1,19 +1,19 @@
 
 
-.h1
-{
-}
-
-.h1
-{
-}
-
 h1
 {
     font-weight: bold;
     vertical-align: text-bottom;
     font-size: 72px;
     white-space: nowrap;
+}
+
+@media (max-width:479px)
+{
+    h1
+    {
+        font-size: 60px;
+    }
 }
 
 #hero {
@@ -27,10 +27,20 @@ h1
     -webkit-clip-path: polygon(0% 0%,100% 0%,100% 80%,0% 100%);
     /* border-bottom: 100px solid red; */
     /* border-left: 50px solid transparent; */
-    background: -moz-linear-gradient(left, rgba(15,138,148,1) 0%, rgba(148,240,145,0.65) 100%);
-    background: -webkit-linear-gradient(left, rgba(15,138,148,1) 0%,rgba(148,240,145,0.65) 100%);
-    background: linear-gradient(to right, rgba(15,138,148,1) 0%,rgba(148,240,145,0.65) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f8a94', endColorstr='#a694f091',GradientType=1 )
+    background: -moz-linear-gradient(left, rgba(15,138,148,1) 0%, #b9f5b7 100%);
+    background: -webkit-linear-gradient(left, rgba(15,138,148,1) 0%,#b9f5b7 100%);
+    background: linear-gradient(to right, rgba(15,138,148,1) 0%,#b9f5b7 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f8a94', endColorstr='#b9f5b7',GradientType=1 )
+}
+
+
+@media (max-width:479px)
+{
+    #hero
+    {
+        height: 600px;
+        margin-bottom: -120px;
+    }
 }
 
 h1 img
@@ -41,6 +51,15 @@ h1 img
 h2
 {
     font-weight: normal;
+}
+
+section>div>h2
+{
+    text-align: center;
+    font-size: 32px;
+    padding-bottom: 30px;
+    color: #60C694;
+    text-transform: uppercase;
 }
 
 *
@@ -265,7 +284,7 @@ nav form .form-control
 {
     display: block;
     margin: auto;
-    width: 150px;
+    width: 120px;
     padding: 10px;
 }
 
