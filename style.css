@@ -244,7 +244,9 @@ nav
 {
     background-color: white;
     line-height: 70px;
+    box-shadow: 0px 0px 10px 0px black;
 }
+
 
 nav a
 {
@@ -333,5 +335,10 @@ footer *
     margin-top: 20px;
     width: 190px;
     font-size: 20px;
+}
+
+[lj-name="menulayer"]
+{
+    width: 100% !important;
 }
 

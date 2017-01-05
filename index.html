@@ -564,7 +564,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </footer>
       </div>
     </div>
-    <div lj-type="lj-layer" lj-name="menulayer" lj-native-scroll="false" lj-default-frame="!none">
+    <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false" lj-default-frame="!none">
       <nav lj-type="frame" lj-name="menuframe" lj-fit-to="responsive-width" style="list-style: none;">
         <a href="index.html?p=left"><h1 class="pull-left"><img src="assets/img/logo1.png" width="50"><span class="hidden-xs">&nbsp;layerJS</span></h1></a>
         <div class="pull-right nav-items">
@@ -585,6 +585,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
     <script>
     layerJS.init();
+      jQuery('[lj-name="contentlayer"]').scroll(function(){
+                                                var mlayer=layerJS.select('[lj-name="menulayer"]');
+                                                if (this.scrollTop>400 && mlayer.currentFrame==null){
+                                                  mlayer.transitionTo('menuframe',{type:'down'});
+                                                } else if (this.scrollTop<400 && mlayer!==null){
+                                                  mlayer.transitionTo('!none',{type:'up'});
+                                                }
+      });
   </script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js" integrity="sha256-+mpyNVJsNt4rVXCw0F+pAOiB3YxmHgrbJsx4ecPuUaI=" crossorigin="anonymous"></script>
         <script>
