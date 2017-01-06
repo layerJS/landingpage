@@ -13,6 +13,8 @@ h1
     h1
     {
         font-size: 60px;
+        white-space: initial;
+        text-align: center;
     }
 }
 
@@ -22,7 +24,7 @@ h1
     color: rgb(240,240,240);
     height: 500px;
     margin-bottom: -100px;
-    padding: 106px 0;
+    padding: 70px 0;
     clip-path: polygon(0% 0%,100% 0%,100% 80%,0% 100%);
     -webkit-clip-path: polygon(0% 0%,100% 0%,100% 80%,0% 100%);
     /* border-bottom: 100px solid red; */
@@ -35,11 +37,17 @@ h1
 
 @media (max-width:767px)
 {
+@media (max-width:767px)
+{
     #hero
     {
         height: 700px;
         margin-bottom: -140px;
+        padding-top: 40px;
+      text-align:center
     }
+}
+
 }
 
 h1 img
@@ -246,7 +254,6 @@ nav
     line-height: 70px;
     box-shadow: 0px 0px 10px 0px black;
 }
-
 
 nav a
 {
