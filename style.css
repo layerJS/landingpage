@@ -37,17 +37,13 @@ h1
 
 @media (max-width:767px)
 {
-@media (max-width:767px)
-{
     #hero
     {
         height: 700px;
         margin-bottom: -140px;
         padding-top: 40px;
-      text-align:center
+        text-align: center;
     }
-}
-
 }
 
 h1 img
@@ -348,4 +344,13 @@ footer *
 {
     width: 100% !important;
 }
+
+.trybox
+{
+    border: 3px solid #60C694;
+    padding: 0px !important;
+  margin: 0px 20px;
+  
+}
+
 
