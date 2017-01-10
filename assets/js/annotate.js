@@ -64,7 +64,7 @@
         line_code.innerHTML = code;
         col_code.appendChild(line_code);
         // support for code highlighting
-        if (typeof hljs !== undefined) {
+        if (typeof hljs !== "undefined") {
           hljs.highlightBlock(line_code.querySelectorAll('span')[parts[1] ? 1 : 0]);
         }
         if (col_lines) {
