@@ -59,8 +59,10 @@ h2
 section>div>h2
 {
     text-align: center;
-    font-size: 32px;
-    padding-bottom: 30px;
+    font-weight: 300;
+    font-family: Source Sans Pro;
+    font-size: 48px;
+    padding-bottom: 50px;
     color: #60C694;
     text-transform: uppercase;
 }
@@ -78,7 +80,9 @@ section>div>h2
 
 #herotext
 {
+    font-weight: 300;
 }
+
 
 .grey
 {
@@ -229,7 +233,7 @@ html
 body
 {
     height: 100%;
-    font-family: texgyreheros, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: source sans pro, texgyreheros, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 [lj-type="frame"], [data-lj-type="frame"]
@@ -349,8 +353,6 @@ footer *
 {
     border: 3px solid #60C694;
     padding: 0px !important;
-  margin: 0px 20px;
-  
+    margin: 0px 20px;
 }
-
 
