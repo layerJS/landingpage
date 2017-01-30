@@ -7,7 +7,6 @@ h1
     font-size: 72px;
 }
 
-
 @media (max-width:767px)
 {
     h1
@@ -354,4 +353,20 @@ footer *
     padding: 0px !important;
     margin: 0px 20px;
 }
+
+.jobs-cta
+{
+    width: 100%;
+}
+
+.jobs-cta a
+{
+    width: 300px;
+    font-size: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  margin-bottom: 30px;
+}
+
 
