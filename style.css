@@ -5,8 +5,8 @@ h1
     font-weight: bold;
     vertical-align: text-bottom;
     font-size: 72px;
-    white-space: nowrap;
 }
+
 
 @media (max-width:767px)
 {
@@ -82,7 +82,6 @@ section>div>h2
 {
     font-weight: 300;
 }
-
 
 .grey
 {
