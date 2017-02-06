@@ -1,2 +1,4 @@
 _pgbackup/*
 **/_pgbackup/*
+node_modules
+site/*.html

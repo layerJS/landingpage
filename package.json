@@ -1,0 +1,18 @@
+{
+  "name": "layerJS",
+  "description": "layerJS, a lean javascript UX framework",
+  "author": "LayerJs",
+  "version": "0.0.0",
+  "devDependencies": {
+    "rimraf": "latest",
+    "scripty": "latest",
+    "istanbul": "latest",
+    "ejs": "latest",
+    "mkdirp" : "latest"
+  },
+  "scripts": {
+    "clean": "rimraf site/*",
+    "jshint": "jshint src",
+    "build": "node scripts/build.js"
+  }
+}
