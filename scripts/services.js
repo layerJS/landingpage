@@ -9,14 +9,31 @@ module.exports = {
     this.writePages(pages);
   },
 
+  compileWithMaster: function(master) {
+    var dataFrames = this.getDataFiles('frames');
+
+    for (var i = 0; i < dataFrames.length; i++) {
+
+      var content = this.getMaster(master, dataFrames[i].data);
+
+      var outputPath = path.format({
+        root: '/',
+        dir: 'site',
+        base: dataFrames[i].fileName
+      });
+
+      helpers.writeFile(outputPath, content);
+    }
+  },
+
   compileToSingleFile: function(master) {
-    var dataFrames = this.compileFrames();
+    var dataFrames = this.getDataFiles('frames');
     var data = {
       content: ''
     };
 
     for (var i = 0; i < dataFrames.length; i++) {
-      data.content += dataFrames[i].content;
+      data.content += dataFrames[i].data.content;
     }
 
     var content = this.getMaster(master, data);
@@ -29,34 +46,12 @@ module.exports = {
     helpers.writeFile(outputPath, content);
   },
 
-  compileFrames: function() {
-    var frameFiles = helpers.getFileNames('frames');
-    var dataFrames = [];
-    for (var i = 0; i < frameFiles.length; i++) {
-      var framePath = path.format({
-        root: '/',
-        dir: 'frames',
-        base: frameFiles[i]
-      });
-
-      dataFrames.push({
-        path: framePath,
-        fileName: frameFiles[i],
-        content: this.compileTemplate(helpers.getFileContent(framePath), {}, {
-          filename: framePath
-        })
-      })
-    }
-
-    return dataFrames;
-  },
-
   compileTemplate: function(content, data, options) {
     return ejs.render(content, data, options);
   },
 
   compilePages: function() {
-    var dataPages = this.getDataPages();
+    var dataPages = this.getDataFiles('pages');
 
     for (var i = 0; i < dataPages.length; i++) {
       var dataPage = dataPages[i];
@@ -96,29 +91,32 @@ module.exports = {
     });
   },
 
-  getDataPages: function() {
-    var pageDirectoryPath = 'pages';
-    var pageNames = helpers.getFileNames(pageDirectoryPath);
-    var pages = [];
+  getDataFiles: function(directory) {
+    var fileNames = helpers.getFileNames(directory);
+    var files = [];
 
-    for (var i = 0; i < pageNames.length; i++) {
-      var page = {};
+    for (var i = 0; i < fileNames.length; i++) {
+      var file = {};
       var pathInfo = path.format({
         root: '/',
-        dir: pageDirectoryPath,
-        base: pageNames[i]
+        dir: directory,
+        base: fileNames[i]
       });
 
-      page.content = this.compileTemplate(helpers.getFileContent(pathInfo), {}, {
+      file.content = this.compileTemplate(helpers.getFileContent(pathInfo), {}, {
         filename: pathInfo
       });
-      page.path = pathInfo;
-      page.fileName = pageNames[i];
-      page.data = this.getThemeData(page.content);
-      pages.push(page);
+      file.path = pathInfo;
+      file.fileName = fileNames[i];
+      file.data = this.getThemeData(file.content);
+      if (!file.data.hasOwnProperty('content')) {
+        file.data.content = file.content;
+      }
+
+      files.push(file);
     }
 
-    return pages;
+    return files;
   },
 
   getThemeData: function(content) {
