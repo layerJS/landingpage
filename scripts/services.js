@@ -7,11 +7,54 @@ module.exports = {
   compileSite: function() {
     var pages = this.compilePages();
     this.writePages(pages);
-
   },
+
+  compileToSingleFile: function(master) {
+    var dataFrames = this.compileFrames();
+    var data = {
+      content: ''
+    };
+
+    for (var i = 0; i < dataFrames.length; i++) {
+      data.content += dataFrames[i].content;
+    }
+
+    var content = this.getMaster(master, data);
+    var outputPath = path.format({
+      root: '/',
+      dir: 'site',
+      base: master
+    });
+
+    helpers.writeFile(outputPath, content);
+  },
+
+  compileFrames: function() {
+    var frameFiles = helpers.getFileNames('frames');
+    var dataFrames = [];
+    for (var i = 0; i < frameFiles.length; i++) {
+      var framePath = path.format({
+        root: '/',
+        dir: 'frames',
+        base: frameFiles[i]
+      });
+
+      dataFrames.push({
+        path: framePath,
+        fileName: frameFiles[i],
+        content: this.compileTemplate(helpers.getFileContent(framePath), {}, {
+          filename: framePath
+        })
+      })
+    }
+
+    return dataFrames;
+  },
+
   compileTemplate: function(content, data, options) {
     return ejs.render(content, data, options);
   },
+
   compilePages: function() {
     var dataPages = this.getDataPages();
 
