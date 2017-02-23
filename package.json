@@ -8,12 +8,14 @@
     "scripty": "latest",
     "istanbul": "latest",
     "ejs": "latest",
-    "mkdirp" : "latest"
+    "mkdirp" : "latest",
+    "lite-server" : "latest"
   },
   "scripts": {
     "clean": "rimraf site/*",
     "jshint": "jshint src",
     "build": "node scripts/build.js",
-    "buildFlow3": "node scripts/build.js layout.html"
+    "buildFlow3": "node scripts/build.js layout.html",
+    "lite": "lite-server"
   }
 }
