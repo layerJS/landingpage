@@ -110,16 +110,18 @@
             <h4 class="sample-header">Sample code</h4>
             <pre>
 &lt;div lj-type=&quot;stage&quot;&gt;
-&lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;frame1&quot;&gt;
-&lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot;&gt;
-... content of frame 1 ...
+  &lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;frame1&quot;&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot;&gt;
+      ... content of frame 1 ...
+    &lt;/div&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame2&quot;&gt;
+      ... content of frame 2 ...
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
-&lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame2&quot;&gt;
-... content of frame 2 ...
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</pre>
-            <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels1" href="#collapse1">Show full HTML</a>
+&lt;a href=&quot;#slider.!prev&quot;&gt;previous&lt;/a&gt;
+&lt;a href=&quot;#slider.!next&quot;&gt;next&lt;/a&gt;</pre>
+            <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels1" href="#collapse1">show full example</a>
           </div>
         </div>
         <div class="col-md-5 col-sm-6 trybox">
@@ -141,46 +143,51 @@
 </div>
               <div class="col-sm-6 anno-code clearfix">
 </div>
-              <pre>
+<pre>
 &lt;html&gt;
+
 &lt;head&gt;
-&lt;script src=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.js&quot;&gt;&lt;/script&gt; //Import layerJS javascript and css files.
-&lt;link href=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
-&lt;link href=&quot;https://cdn.layerjs.org/examples/slider/your-style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt; //include your own styling for stage positions and visuals.
+  &lt;meta name=&quot;description&quot; content=&quot;simple slider; medium.com example&quot;&gt;
+  &lt;script src=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.1.js&quot;&gt;&lt;/script&gt;
+  &lt;link href=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.1.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+  &lt;link href=&quot;https://cdn.layerjs.org/examples/slider/your-style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
 &lt;/head&gt;
+
 &lt;body&gt;
-&lt;div lj-type=&quot;stage&quot;&gt; // Define a single stage.
-// Define the layer &quot;slider&quot; for the slides.
-// The default frame is &quot;frame1&quot;
-&lt;div lj-type=&quot;layer&quot; lj-name=&quot;slider&quot; lj-default-frame=&quot;frame1&quot; lj-native-scroll=&quot;false&quot;&gt;
-// Define one frame per slide.
-// lj-fit-to=&quot;cover&quot; will make sure that the stage will be fully filled with the frame.
-// &quot;neighbors.l&quot;/&quot;r&quot; define which frames will be transitioned to upon left/right swipe gestures.
-&lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot; lj-fit-to=&quot;cover&quot; lj-no-scrolling=&quot;true&quot; lj-start-position=&quot;center&quot; lj-neighbors.r=&quot;frame2&quot;&gt;
-  &lt;img src=&quot;https://cdn.layerjs.org/examples/slider/img/samples1a.png&quot;&gt;
-&lt;/div&gt;
-&lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame2&quot; lj-fit-to=&quot;cover&quot; lj-no-scrolling=&quot;true&quot; lj-start-position=&quot;center&quot; lj-neighbors.l=&quot;frame1&quot; lj-neighbors.r=&quot;frame3&quot;&gt;
-  &lt;img src=&quot;https://cdn.layerjs.org/examples/slider/img/samples1b.png&quot;&gt;
-&lt;/div&gt;
-&lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame3&quot; lj-fit-to=&quot;cover&quot; lj-no-scrolling=&quot;true&quot; lj-start-position=&quot;center&quot; lj-neighbors.l=&quot;frame2&quot;&gt;
-  &lt;img src=&quot;https://cdn.layerjs.org/examples/slider/img/samples1c.png&quot;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-// A second layer for the controls
-&lt;div lj-type=&quot;layer&quot; lj-native-scroll=&quot;false&quot; id=&quot;arrows&quot;&gt;
-// The control frame. The frame will be centered in the stage.
-&lt;div lj-type=&quot;frame&quot; lj-fit-to=&quot;width&quot; lj-start-position=&quot;center&quot; lj-no-scrolling=&quot;true&quot;&gt;
-  // the link will trigger the transition to the previous frame of the currently active frame in layer &quot;slider&quot;.
-  &lt;a class=&quot;btn-left btn&quot; href=&quot;#slider.!prev?p=right&quot;&gt;&amp;lt;&lt;/a&gt;
-  &lt;a class=&quot;btn-right btn&quot; href=&quot;#slider.!right&quot;&gt;&amp;gt;&lt;/a&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;script&gt;
-layerJS.init(); // initialize layerJS
-&lt;/script&gt;
+  &lt;div lj-type=&quot;stage&quot;&gt; &lt;!--  Define a single stage.  --&gt;
+    &lt;!--  Define the layer &quot;slider&quot; for the slides.  --&gt;
+    &lt;!--  The default frame is &quot;frame1&quot; --&gt;
+    &lt;div lj-type=&quot;layer&quot; lj-name=&quot;slider&quot; lj-default-frame=&quot;frame1&quot; lj-native-scroll=&quot;false&quot;&gt;
+      &lt;!--  Define one frame per slide.  --&gt;
+      &lt;!--  lj-fit-to=&quot;cover&quot; will make sure that the stage will be fully filled with the frame.  --&gt;
+      &lt;!--  &quot;neighbors.l&quot;/&quot;r&quot; define which frames will be transitioned to upon left/right swipe gestures. --&gt;
+      &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot; lj-fit-to=&quot;cover&quot; lj-no-scrolling=&quot;true&quot; lj-start-position=&quot;center&quot; lj-neighbors.r=&quot;frame2&quot;&gt;
+        &lt;img src=&quot;https://cdn.layerjs.org/examples/slider/img/samples1a.png&quot;&gt;
+      &lt;/div&gt;
+      &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame2&quot; lj-fit-to=&quot;cover&quot; lj-no-scrolling=&quot;true&quot; lj-start-position=&quot;center&quot; lj-neighbors.l=&quot;frame1&quot; lj-neighbors.r=&quot;frame3&quot;&gt;
+        &lt;img src=&quot;https://cdn.layerjs.org/examples/slider/img/samples1b.png&quot;&gt;
+      &lt;/div&gt;
+      &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame3&quot; lj-fit-to=&quot;cover&quot; lj-no-scrolling=&quot;true&quot; lj-start-position=&quot;center&quot; lj-neighbors.l=&quot;frame2&quot;&gt;
+        &lt;img src=&quot;https://cdn.layerjs.org/examples/slider/img/samples1c.png&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--  A second layer for the controls --&gt;
+    &lt;div lj-type=&quot;layer&quot; lj-native-scroll=&quot;false&quot; id=&quot;arrows&quot;&gt;
+      &lt;!--  The control frame. The frame will be centered in the stage. --&gt;
+      &lt;div lj-type=&quot;frame&quot; lj-fit-to=&quot;width&quot; lj-start-position=&quot;center&quot; lj-no-scrolling=&quot;true&quot;&gt;
+        &lt;!--  the link will trigger the transition to the previous frame of the currently active frame in layer &quot;slider&quot;. --&gt;
+        &lt;a class=&quot;btn-left btn&quot; href=&quot;#slider.!left?p=right&quot;&gt;&amp;lt;&lt;/a&gt;
+        &lt;a class=&quot;btn-right btn&quot; href=&quot;#slider.!right?p=left&quot;&gt;&amp;gt;&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+    layerJS.init(); // initialize layerJS
+  &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</pre>
+
+&lt;/html&gt;
+</pre>
             </div>
           </div>
         </div>
@@ -199,18 +206,18 @@ layerJS.init(); // initialize layerJS
             <h4 class="sample-header">Sample code</h4>
             <pre>
 &lt;div lj-type=&quot;stage&quot;&gt;
-&lt;div lj-type=&quot;layer&quot;&gt;
-&lt;div lj-type=&quot;frame&quot; lj-fit-to=&quot;cover&quot;&gt;
-&lt;img src=&quot;img/background.png&quot;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div lj-type=&quot;layer&quot;&gt;
-&lt;div lj-type=&quot;frame&quot;&gt;
-... content ...
-&lt;/div&gt;
-&lt;/div&gt;
+  &lt;div lj-type=&quot;layer&quot;&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-fit-to=&quot;cover&quot;&gt;
+      &lt;img src=&quot;img/background.png&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div lj-type=&quot;layer&quot;&gt;
+    &lt;div lj-type=&quot;frame&quot;&gt;
+      ... content ...
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</pre>
-            <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels2" href="#collapse2">Show full HTML<br></a>
+            <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels2" href="#collapse2">show full example<br></a>
           </div>
         </div>
         <div class="col-md-5 col-sm-6 trybox">
@@ -232,49 +239,53 @@ layerJS.init(); // initialize layerJS
 </div>
               <div class="col-sm-6 anno-code clearfix">
 </div>
-              <pre>
+<pre>
 &lt;html&gt;
+
 &lt;head&gt;
-&lt;meta name=&quot;description&quot; content=&quot;parallax effect&quot;&gt;
-&lt;script src=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.js&quot;&gt;&lt;/script&gt; //Include layerJS.
-&lt;link href=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
-&lt;link href=&quot;https://cdn.layerjs.org/examples/parallax/your-style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt; // Additional styling
+  &lt;meta name=&quot;description&quot; content=&quot;parallax effect&quot;&gt;
+  &lt;script src=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.1.js&quot;&gt;&lt;/script&gt;
+  &lt;link href=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.1.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+  &lt;link href=&quot;https://cdn.layerjs.org/examples/parallax/your-style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
 &lt;/head&gt;
+
 &lt;body&gt;
-&lt;div lj-type=&quot;stage&quot;&gt; // Add a stage.
-&lt;div lj-type=&quot;layer&quot;&gt; // Background layer.
-&lt;div lj-type=&quot;frame&quot; lj-name=&quot;bg&quot; lj-fit-to=&quot;cover&quot; lj-no-scrolling=&quot;true&quot;&gt; // Frame containing the background image that covers the full background. Can contain arbitrary content, not just an image.
-  &lt;img src=&quot;https://cdn.layerjs.org/examples/parallax/img/prezi.png&quot;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div lj-type=&quot;layer&quot;&gt; // Foreground layer.
-&lt;div lj-type=&quot;frame&quot;&gt; // Frame containing the actual content. If higher than the stage it will scroll.
-  &lt;p class=&quot;p&quot;&gt;
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-  &lt;/p&gt;
-  &lt;div class=&quot;transparent&quot;&gt;
+  &lt;div lj-type=&quot;stage&quot;&gt; &lt;!-- Add a stage. --&gt;
+    &lt;div lj-type=&quot;layer&quot;&gt; &lt;!-- Background layer. --&gt;
+      &lt;div lj-type=&quot;frame&quot; lj-name=&quot;bg&quot; lj-fit-to=&quot;cover&quot; lj-no-scrolling=&quot;true&quot;&gt; &lt;!-- Frame containing the background image that covers the full background. Can contain arbitrary content, not just an image. --&gt;
+        &lt;img src=&quot;https://cdn.layerjs.org/examples/parallax/img/prezi.png&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div lj-type=&quot;layer&quot;&gt; &lt;!-- Foreground layer. --&gt;
+      &lt;div lj-type=&quot;frame&quot;&gt; &lt;!-- Frame containing the actual content. If higher than the stage it will scroll. --&gt;
+        &lt;p class=&quot;p&quot;&gt;
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+        &lt;/p&gt;
+        &lt;div class=&quot;transparent&quot;&gt;
+        &lt;/div&gt;
+        &lt;p class=&quot;p&quot;&gt;
+          Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe
+          al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles.
+        &lt;/p&gt;
+        &lt;div class=&quot;window&quot;&gt;
+        &lt;/div&gt;
+        &lt;p class=&quot;p&quot;&gt;
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.&amp;nbsp;
+        &lt;/p&gt;
+        &lt;p class=&quot;p&quot;&gt;
+          Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe
+          al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles.
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
-  &lt;p class=&quot;p&quot;&gt;
-    Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe
-    al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles.
-  &lt;/p&gt;
-  &lt;div class=&quot;window&quot;&gt;
-  &lt;/div&gt;
-  &lt;p class=&quot;p&quot;&gt;
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.&amp;nbsp;
-  &lt;/p&gt;
-  &lt;p class=&quot;p&quot;&gt;
-    Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe
-    al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles.
-  &lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;script&gt;
-layerJS.init(); //initialize layerJS framework
-&lt;/script&gt;
+  &lt;script&gt;
+    layerJS.init(); // initialize layerJS framework
+  &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</pre>
+
+&lt;/html&gt;
+</pre>
             </div>
           </div>
         </div>
@@ -291,24 +302,24 @@ layerJS.init(); //initialize layerJS framework
             <h4 class="sample-header">Sample code</h4>
             <pre>
 &lt;div lj-type="stage"&gt;
-&lt;div lj-type="layer" lj-default-frame="frame1"&gt;
-&lt;div lj-type="frame" lj-name="frame1"&gt;
-... page content ...
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div lj-type="layer" lj-name="menulayer"&gt;
-&lt;div lj-type="frame" lj-name="menu-closed"&gt;
-  &lt;a href="#menu-open"&gt;Menu&lt;/a&gt;
-&lt;/div&gt;
-&lt;div lj-type="frame" lj-name="menu-open"&gt;
-&lt;a href="#menu-closed"&gt;close&lt;/a&gt;
-&lt;ul class="nav-list"&gt;
-  ... menu items ...
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+  &lt;div lj-type="layer" lj-default-frame="frame1"&gt;
+    &lt;div lj-type="frame" lj-name="frame1"&gt;
+      ... page content ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div lj-type="layer" lj-name="menulayer"&gt;
+    &lt;div lj-type="frame" lj-name="menu-closed"&gt;
+      &lt;a href="#menu-open"&gt;Menu&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div lj-type="frame" lj-name="menu-open"&gt;
+      &lt;a href="#menu-closed"&gt;close&lt;/a&gt;
+      &lt;ul class="nav-list"&gt;
+        ... menu items ...
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</pre>
-            <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels3" href="#collapse3">Show full HTML<br></a>
+            <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels3" href="#collapse3">show full example<br></a>
           </div>
         </div>
         <div class="col-md-5 col-sm-6 trybox">
@@ -333,52 +344,56 @@ layerJS.init(); //initialize layerJS framework
               <pre>
 &lt;html&gt;
 &lt;head&gt;
-&lt;script src=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.js&quot;&gt;&lt;/script&gt; // Include layerJS.
-&lt;link href=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
-&lt;link href=&quot;https://cdn.layerjs.org/examples/sidemenu/your-style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt; // Additional styling
+  &lt;meta name=&quot;description&quot; content=&quot;sidemenu 1 layer&quot;&gt;
+  &lt;script src=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.1.js&quot;&gt;&lt;/script&gt;
+  &lt;link href=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.1.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+  &lt;link href=&quot;https://cdn.layerjs.org/examples/sidemenu/your-style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
 &lt;/head&gt;
+
 &lt;body&gt;
-&lt;div lj-type=&quot;stage&quot;&gt; // Add a stage.
-&lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;frame1&quot;&gt; // The layer for the main content
-&lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot; class=&quot;content&quot; lj-fit-to=&quot;responsive-width&quot;&gt; // The content of the current page
-  &lt;p&gt; Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-    sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
-  &lt;p&gt; Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-    sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div lj-type=&quot;layer&quot; lj-name=&quot;menulayer&quot; lj-native-scroll=&quot;false&quot;&gt; // The layer for the menu on top of the main content
-&lt;div lj-type=&quot;frame&quot; lj-name=&quot;hmenu&quot; class=&quot;nav&quot; lj-fit-to=&quot;responsive-width&quot;&gt; // The frame for the menu in the closed state
-  &lt;div class=&quot;nav-hor&quot;&gt;
-    &lt;a href=&quot;#menu?p=slideOverRightFade&amp;t=0.5s&quot;&gt;&amp;#x2630; Menu&lt;/a&gt; // Link to open state with parameters that control the animation type and the timing.
+&lt;div lj-type=&quot;stage&quot;&gt; &lt;!-- Add a stage. --&gt;
+  &lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;frame1&quot;&gt; &lt;!-- The layer for the main content --&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot; class=&quot;content&quot; lj-fit-to=&quot;responsive-width&quot;&gt; &lt;!-- The content of the current page --&gt;
+      &lt;p&gt; Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+        sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+        duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
+      &lt;p&gt; Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+        sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+        duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;div lj-type=&quot;layer&quot; lj-name=&quot;menulayer&quot; lj-native-scroll=&quot;false&quot;&gt; &lt;!-- The layer for the menu on top of the main content --&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;hmenu&quot; class=&quot;nav&quot; lj-fit-to=&quot;responsive-width&quot; lj-transition=&quot;fade&quot;&gt; &lt;!-- The frame for the menu in the closed state --&gt;
+        &lt;div class=&quot;nav-hor&quot;&gt;
+        &lt;a href=&quot;#menu?t=0.5s&quot;&gt;&amp;#x2630; Menu&lt;/a&gt; &lt;!-- Link to open state with parameters that control the animation type and the timing. --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;menu&quot; class=&quot;nav menu&quot; lj-fit-to=&quot;responsive-height&quot; lj-neighbors.r=&quot;hmenu&quot; lj-transition=&quot;slideOverRight&quot;&gt; &lt;!-- The frame for the menu in the open state. The &quot;neighbors&quot; attribute allows swipe gestures to close the menu. --&gt;
+      &lt;a href=&quot;#hmenu?t=0.5s&quot; class=&quot;close&quot;&gt;&amp;#x2573;&lt;/a&gt; &lt;!-- The close button with a link to the closed state. --&gt;
+        &lt;ul class=&quot;nav-list&quot;&gt;
+          &lt;li class=&quot;nav-item&quot;&gt;
+            Menu 1
+          &lt;/li&gt;
+          &lt;li class=&quot;nav-item&quot;&gt;
+            Menu 2
+          &lt;/li&gt;
+          &lt;li class=&quot;nav-item&quot;&gt;
+            Menu 3
+          &lt;/li&gt;
+          &lt;li class=&quot;nav-item&quot;&gt;
+            Menu 4
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-&lt;div lj-type=&quot;frame&quot; lj-name=&quot;menu&quot; class=&quot;nav menu&quot; lj-fit-to=&quot;responsive-height&quot; lj-neighbors.r=&quot;hmenu&quot;&gt; // The frame for the menu in the open state. The "neighbors" attribute allows swipe gestures to close the menu.
-  &lt;a href=&quot;#hmenu?t=0.5s&amp;p=slideAwayLeftFade&quot; class=&quot;close&quot;&gt;&amp;#x2573;&lt;/a&gt; // The close button with a link to the closed state.
-  &lt;ul class=&quot;nav-list&quot;&gt;
-    &lt;li class=&quot;nav-item&quot;&gt;
-      Menu 1
-    &lt;/li&gt;
-    &lt;li class=&quot;nav-item&quot;&gt;
-      Menu 2
-    &lt;/li&gt;
-    &lt;li class=&quot;nav-item&quot;&gt;
-      Menu 3
-    &lt;/li&gt;
-    &lt;li class=&quot;nav-item&quot;&gt;
-      Menu 4
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;script&gt;
-layerJS.init(); // initialize layerJS
+  &lt;script&gt;
+  layerJS.init(); // initialize layerJS
 &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</pre>
+
+&lt;/html&gt;
+              </pre>
             </div>
           </div>
         </div>
@@ -395,19 +410,19 @@ layerJS.init(); // initialize layerJS
             <h4 class="sample-header">Sample code</h4>
             <pre>
 &lt;div lj-type=&quot;stage&quot;&gt;
-&lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;frame1&quot;&gt;
-&lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot;&gt;
-... page content ...
-&lt;a href=&quot;#box-layer.box1&gt;click here ...&lt;/a&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;!none&quot; lj-name=&quot;box-layer&quot;&gt;
-&lt;div lj-type=&quot;frame&quot; lj-name=&quot;box1&quot;&gt;
-... modal content ...
-&lt;/div&gt;
-&lt;/div&gt;
+  &lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;frame1&quot;&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot;&gt;
+      ... page content ...
+      &lt;a href=&quot;#box-layer.box1&gt;click here ...&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;!none&quot; lj-name=&quot;box-layer&quot;&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;box1&quot;&gt;
+      ... modal content ...
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</pre>
-            <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels4" href="#collapse4">Show full HTML<br></a>
+            <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels4" href="#collapse4">show full example<br></a>
           </div>
         </div>
         <div class="col-md-5 col-sm-6 trybox">
@@ -431,43 +446,48 @@ layerJS.init(); // initialize layerJS
 </div>
               <pre>
 &lt;html&gt;
+
 &lt;head&gt;
-&lt;script src=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.js&quot;&gt;&lt;/script&gt; // Include layerJS.
-&lt;link href=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.0.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
-&lt;link href=&quot;https://cdn.layerjs.org/examples/lightbox/your-style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt; // Additional styling
+  &lt;meta name=&quot;description&quot; content=&quot;lightbox example&quot;&gt;
+  &lt;script src=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.1.js&quot;&gt;&lt;/script&gt;
+  &lt;link href=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.1.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+  &lt;link href=&quot;https://cdn.layerjs.org/examples/lightbox/your-style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
 &lt;/head&gt;
-&lt;body lj-type=&quot;stage&quot;&gt; // Add a stage.
-&lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;frame1&quot;&gt; // The layer for the main content
-&lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot; lj-fit-to=&quot;responsive-width&quot;&gt; // The content frame
-&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-  takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-  et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-&lt;/p&gt;
-&lt;a href=&quot;#box-layer.box1?p=fade&amp;t=0.2s&quot;&gt;click here ...&lt;/a&gt; // The link opening the lighbox including animation parameters
-&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-  takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-  et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;!none&quot; lj-name=&quot;box-layer&quot; lj-native-scroll=&quot;false&quot;&gt; // The layer for the lightbox. The initial frame is the special frame &quot;!none&quot; which repesents an empty layer.
-&lt;div lj-type=&quot;frame&quot; lj-name=&quot;box1&quot; lj-fit-to=&quot;responsive&quot; class=&quot;modal&quot;&gt; // The content of the modal.
-&lt;div class=&quot;modal-inner&quot;&gt;
-  &lt;div&gt;
-    &lt;a href=&quot;#box-layer.!none?t=0.2s&amp;p=fade&quot; class=&quot;close&quot;&gt;&amp;#x2573;&lt;/a&gt; // A Link as close button which resets the active frame of the lighbox layer to &quot;!none&quot;
+
+&lt;body lj-type=&quot;stage&quot;&gt; &lt;!-- Add a stage. --&gt;
+  &lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;frame1&quot;&gt; &lt;!-- The layer for the main content --&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot; lj-fit-to=&quot;responsive-width&quot;&gt; &lt;!-- The content frame --&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      &lt;/p&gt;
+      &lt;a href=&quot;#box-layer.box1?p=fade&amp;t=0.2s&quot;&gt;click here ...&lt;/a&gt; &lt;!-- The link opening the lighbox including animation parameters --&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      &lt;/p&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
-  &lt;h1&gt;A modal&lt;/h1&gt;
-  &lt;p&gt;
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
-  &lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;script&gt;
-layerJS.init(); //Initialize layerJS
-&lt;/script&gt;
+  &lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;!none&quot; lj-name=&quot;box-layer&quot; lj-native-scroll=&quot;false&quot;&gt; &lt;!-- The layer for the lightbox. The initial frame is the special frame &quot;!none&quot; which repesents an empty layer. --&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;box1&quot; lj-fit-to=&quot;responsive&quot; class=&quot;modal&quot;&gt; &lt;!-- The content of the modal. --&gt;
+      &lt;div class=&quot;modal-inner&quot;&gt;
+        &lt;div&gt;
+          &lt;a href=&quot;#box-layer.!none?t=0.2s&amp;p=fade&quot; class=&quot;close&quot;&gt;&amp;#x2573;&lt;/a&gt; &lt;!-- A Link as close button which resets the active frame of the lighbox layer to &quot;!none&quot; --&gt;
+        &lt;/div&gt;
+        &lt;h1&gt;A modal&lt;/h1&gt;
+        &lt;p&gt;
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+    layerJS.init(); // Initialize layerJS
+  &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</pre>
+
+&lt;/html&gt;
+              </pre>
             </div>
           </div>
         </div>
