@@ -1,7 +1,8 @@
 (function(doc, win) {
   var template_3 = '<div class="annotation"></div><div class="anno-lines"></div><div class="anno-code"></div>';
   var template_2 = '<div class="annotation"></div><div class="anno-lines"></div><div class="anno-code"></div>';
-  var separator = '(?:\\s+\/\/|\/\/\\s+)';
+  var separator = '(?:\\s+\/\/|\/\/\\s+|\\s*<\\!--|\\s*&lt;!--)';
+  var endseparator = '(?:-->\\s*|--&gt;\\s*)';
   var listen_blocks = [];
   var apply_create = function(anno_block, template) {
     var anno_blocks;
@@ -45,6 +46,7 @@
       var linenr = 0;
       while (lines.length) {
         var l = lines.shift();
+        l = l.replace(RegExp(endseparator + "$"), '');
         var segments = l.split(RegExp(separator + "\\s*"), 2);
         if (segments[0].match(/^\s*$/) && segments[1]) {
           pre_docu += segments[1] + "\n";
