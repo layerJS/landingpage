@@ -55,6 +55,9 @@ h2
     font-weight: normal;
 }
 
+section {
+  background-color: white;
+}
 section>div>h2
 {
     text-align: center;
@@ -327,6 +330,11 @@ footer *
     font-size: 14px;
 }
 
+/*[lj-name="contentlayer"] footer {
+  visibility: hidden;
+  pointer-events: none;
+}*/
+
 .social-share img
 {
     width: 25px;
@@ -368,5 +376,3 @@ footer *
     display: block;
   margin-bottom: 30px;
 }
-
-
