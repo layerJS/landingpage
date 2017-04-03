@@ -134,13 +134,49 @@
         </div>
       </div>
     </div>
+    <div class="container example-container">
+      <h3 class="text-center example-headline">Zoom UI</h3>
+      <div class="row">
+        <div class="col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-0">
+          <div class="whitebox">Zooming patterns, as often found in mobile apps, can be created with the "canvas" layout. Here, frames have fixed positions on the "canvas" and can be scaled or rotated. During transitions, the canvas is transformed (moved, scaled, rotated) such that the active frame fits into the stage.</div>
+          <div class="whitebox">
+            <h4 class="sample-header">Sample code</h4>
+            <pre>
+&lt;div lj-type=&quot;stage&quot;&gt;
+  &lt;div lj-type=&quot;layer&quot; lj-layout=&quot;canvas&quot;&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;zoomout&quot;&gt;
+      ... Headline and intro ...
+    &lt;/div&gt;
+    &lt;div lj-type=&quot;frame&quot; lj-name=&quot;zoomin&quot;&gt;
+      &lt;div lj-type=&quot;stage&quot;&gt;
+        &lt;div lj-type=&quot;layer&quot; lj-layout=&quot;canvas&quot;&gt;
+          &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot;&gt;
+            ... content frame 1 ...
+          &lt;/div&gt;
+          &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame2&quot;&gt;
+            ... content frame 2 ...
+          &lt;/div&gt;
+          ...
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;<a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels1" href="#collapse12">show full example</a>
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-6 trybox">
+          <h4 class="sample-header">Try below: swipe or click thumbs</h4>
+          <iframe src="https://cdn.layerjs.org/examples/zoom/index.html" width="100%" height="500px;" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
     <div class="row inset hidden-xs" style="margin: 0px;">
       <div class="inset-box">
       </div>
       <div id="panels1">
         <div>
-          <div id="collapse1" class="panel-collapse collapse">
-            <div id="example1" class="panel-body" style="padding: 0px;" data-annotate data-annotate-lang="html">
+          <div id="collapse12" class="panel-collapse collapse">
+            <div id="example12" class="panel-body" style="padding: 0px;" data-annotate data-annotate-lang="html">
               <div class="col-sm-3 col-sm-offset-1 annotation">
               </div>
               <div class="col-sm-1 anno-lines lines">
@@ -151,47 +187,64 @@
 &lt;html&gt;
 
 &lt;head&gt;
-  &lt;meta name=&quot;description&quot; content=&quot;simple slider; medium.com example&quot;&gt;
-  &lt;script src=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.1.js&quot;&gt;&lt;/script&gt;
-  &lt;link href=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.1.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
-  &lt;link href=&quot;https://cdn.layerjs.org/examples/slider/your-style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;zoomin interface&quot;&gt;
+  &lt;script src=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.2.js&quot;&gt;&lt;/script&gt;&lt;!-- link layerjs --&gt;
+  &lt;link href=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.2.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+  &lt;link href=&quot;https://cdn.layerjs.org/examples/zoom/your-style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;&lt;!-- add styling to the content --&gt;
 &lt;/head&gt;
 
-&lt;body&gt;
-  &lt;div lj-type=&quot;stage&quot;&gt; &lt;!--  Define a single stage.  --&gt;
-    &lt;!--  Define the layer &quot;slider&quot; for the slides.  --&gt;
-    &lt;!--  The default frame is &quot;frame1&quot; --&gt;
-    &lt;div lj-type=&quot;layer&quot; lj-name=&quot;slider&quot; lj-default-frame=&quot;frame1&quot; lj-native-scroll=&quot;false&quot;&gt;
-      &lt;!--  Define one frame per slide.  --&gt;
-      &lt;!--  lj-fit-to=&quot;cover&quot; will make sure that the stage will be fully filled with the frame.  --&gt;
-      &lt;!--  &quot;neighbors.l&quot;/&quot;r&quot; define which frames will be transitioned to upon left/right swipe gestures. --&gt;
-      &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot; lj-fit-to=&quot;cover&quot; lj-no-scrolling=&quot;true&quot; lj-start-position=&quot;center&quot; lj-neighbors.r=&quot;frame2&quot;&gt;
-        &lt;img src=&quot;https://cdn.layerjs.org/examples/slider/img/samples1a.png&quot;&gt;
-      &lt;/div&gt;
-      &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame2&quot; lj-fit-to=&quot;cover&quot; lj-no-scrolling=&quot;true&quot; lj-start-position=&quot;center&quot; lj-neighbors.l=&quot;frame1&quot; lj-neighbors.r=&quot;frame3&quot;&gt;
-        &lt;img src=&quot;https://cdn.layerjs.org/examples/slider/img/samples1b.png&quot;&gt;
-      &lt;/div&gt;
-      &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame3&quot; lj-fit-to=&quot;cover&quot; lj-no-scrolling=&quot;true&quot; lj-start-position=&quot;center&quot; lj-neighbors.l=&quot;frame2&quot;&gt;
-        &lt;img src=&quot;https://cdn.layerjs.org/examples/slider/img/samples1c.png&quot;&gt;
-      &lt;/div&gt;
+&lt;!-- Add a main stage. --&gt;
+&lt;body lj-type=&quot;stage&quot; id=&quot;mainstage&quot;&gt;
+  &lt;!-- The layer for the zoom menu. By default the zoomed out state is shown. --&gt;
+  &lt;div lj-type=&quot;layer&quot; lj-default-frame=&quot;zoomout&quot; lj-layout=&quot;canvas&quot;&gt;
+    &lt;!-- The frame showing everything in the zoomed out state --&gt;
+    &lt;div lj-type=&quot;frame&quot; id=&quot;zoomout&quot; lj-fit-to=&quot;fixed&quot;&gt;
+      &lt;h1&gt;Abitrage Ipsum Momentum&lt;/h1&gt;
+      &lt;h2&gt;Beware of the Little White Rabbit&lt;/h2&gt;
+      &lt;p&gt;
+        Click on one of the content frames below to get the details. Swipe to switch between them. Use the menu icon in the frames to get back to the main menu.
+      &lt;/p&gt;
     &lt;/div&gt;
-    &lt;!--  A second layer for the controls --&gt;
-    &lt;div lj-type=&quot;layer&quot; lj-native-scroll=&quot;false&quot; id=&quot;arrows&quot;&gt;
-      &lt;!--  The control frame. The frame will be centered in the stage. --&gt;
-      &lt;div lj-type=&quot;frame&quot; lj-fit-to=&quot;width&quot; lj-start-position=&quot;center&quot; lj-no-scrolling=&quot;true&quot;&gt;
-        &lt;!--  the link will trigger the transition to the previous frame of the currently active frame in layer &quot;slider&quot;. --&gt;
-        &lt;a class=&quot;btn-left btn&quot; href=&quot;#slider.!left?p=right&quot;&gt;&amp;lt;&lt;/a&gt;
-        &lt;a class=&quot;btn-right btn&quot; href=&quot;#slider.!right?p=left&quot;&gt;&amp;gt;&lt;/a&gt;
+    &lt;!-- The zoomed in frame only showing the current content frame --&gt;
+    &lt;div lj-type=&quot;frame&quot; id=&quot;zoomin&quot; lj-fit-to=&quot;fixed&quot; lj-scale=&quot;0.25&quot;&gt;
+      &lt;!-- The stage that handles the transitions between the content frames --&gt;
+      &lt;div lj-type=&quot;stage&quot; id=&quot;contentstage&quot;&gt;
+        &lt;!-- The layer for the content frames --&gt;
+        &lt;div lj-type=&quot;layer&quot; id=&quot;contentlayer&quot; lj-layout=&quot;canvas&quot; lj-native-scroll=&quot;false&quot;&gt;
+          &lt;!-- 1st content frame. --&gt;
+          &lt;div lj-type=&quot;frame&quot; id=&quot;frame1&quot; lj-fit-to=&quot;responsive&quot; lj-neighbors.r=&quot;frame2&quot;&gt;
+            &lt;a class=&quot;coverlink&quot; href=&quot;#frame1;zoomin;minimenu.hamburger&quot;&gt;&lt;/a&gt;&lt;!-- an overlay linking to the zoomed in state of frame1 with the hamburger menu showing --&gt;
+            &lt;iframe width=&quot;100%&quot; height=&quot;100%&quot; frameborder=&quot;0&quot; src=&quot;https://techcrunch.com/2017/04/03/apple-gpu-tech/amp/&quot;&gt;&lt;/iframe&gt;&lt;!-- We use an external iframe to not clutter this example with content. --&gt;
+          &lt;/div&gt;
+          &lt;!-- the next content frame --&gt;
+          &lt;div lj-type=&quot;frame&quot; id=&quot;frame2&quot; lj-fit-to=&quot;responsive&quot; lj-neighbors.r=&quot;frame3&quot; lj-neighbors.l=&quot;frame1&quot;&gt;
+            &lt;a class=&quot;coverlink&quot; href=&quot;#frame2;zoomin;minimenu.hamburger&quot;&gt;&lt;/a&gt;
+            &lt;iframe width=&quot;100%&quot; height=&quot;100%&quot; frameborder=&quot;0&quot; src=&quot;https://www.wired.com/2017/03/yes-spider-man-can-jump-6-meters-onto-moving-ferry-physics-says/?amp=1&quot;&gt;&lt;/iframe&gt;
+          &lt;/div&gt;
+          &lt;div lj-type=&quot;frame&quot; id=&quot;frame3&quot; lj-fit-to=&quot;responsive&quot; lj-neighbors.r=&quot;frame4&quot; lj-neighbors.l=&quot;frame2&quot;&gt;
+            &lt;a class=&quot;coverlink&quot; href=&quot;#frame3;zoomin;minimenu.hamburger&quot;&gt;&lt;/a&gt;
+            &lt;iframe width=&quot;100%&quot; height=&quot;100%&quot; frameborder=&quot;0&quot; src=&quot;https://venturebeat.com/2017/04/02/understanding-the-limits-of-deep-learning/amp/&quot;&gt;&lt;/iframe&gt;
+          &lt;/div&gt;
+          &lt;div lj-type=&quot;frame&quot; id=&quot;frame4&quot; lj-fit-to=&quot;responsive&quot; lj-neighbors.l=&quot;frame3&quot;&gt;
+            &lt;a class=&quot;coverlink&quot; href=&quot;#frame4;zoomin;minimenu.hamburger&quot;&gt;&lt;/a&gt;
+            &lt;iframe width=&quot;100%&quot; height=&quot;100%&quot; frameborder=&quot;0&quot; src=&quot;https://techcrunch.com/2017/04/03/statcounter-android-windows/amp/&quot;&gt;&lt;/iframe&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
+  &lt;div lj-type=&quot;layer&quot; id=&quot;minimenu&quot; lj-default-frame=&quot;!none&quot; lj-native-scroll=&quot;false&quot;&gt; &lt;!-- the layer for the hamburger menu. It&#39;s not shown by default --&gt;
+    &lt;a href=&quot;#zoomout;frame1;minimenu.!none&quot; lj-type=&quot;frame&quot; id=&quot;hamburger&quot; lj-start-position=&quot;top&quot; lj-fit-to=&quot;fixed&quot; lj-transition=&quot;down&quot;&gt;&lt;!-- the &quot;hamburger&quot; linking to the zoomed out state with the hamburger not shown. --&gt;
+      &amp;#x2630;
+    &lt;/a&gt;
+  &lt;/div&gt;
   &lt;script&gt;
-    layerJS.init(); // initialize layerJS
+    layerJS.init(); // Initialize layerJS
   &lt;/script&gt;
 &lt;/body&gt;
 
-&lt;/html&gt;
-</pre>
+&lt;/html&gt;</pre>
             </div>
           </div>
         </div>
