@@ -558,14 +558,14 @@
     <div class="container">
       <h2 style="">Feedback &amp; questions</h2>
       <p style="">Your feedback is very welcome! If you have any questions or comments please use the below feedback form or contact us at <a href="mailto:developers@layerjs.org">developers@layerjs.org</a>. We are continiously improving layerJS so with your feedback you can help shaping the future development.</p>
-      <textarea id="feedback" class="form-control" rows="3" placeholder="Please enter your comments or questions."></textarea>
+      <textarea id="feedback_text" class="form-control" rows="3" placeholder="Please enter your comments or questions."></textarea>
       <a id="feedback_send" class="btn btn-key pull-right" href="#">Send<br></a>
       <p>
         Also please checkout our <a href="https://github.com/layerJS/layerJS/wiki">Wiki</a> for more detailed documentation of the layerJS functions.
       </p>
     </div>
     <script>
-      $('#feedback').on('blur',function() {
+      $('#feedback_text').on('blur',function() {
         if (!$(this).val()) return;
         dataLayer=dataLayer||[];
         dataLayer.push({
@@ -574,11 +574,11 @@
         });
       });
       $('#feedback_send').on('click',function() {
-        if (!$('#feedback').val()) return;
+        if (!$('#feedback_text').val()) return;
         dataLayer=dataLayer||[];
         dataLayer.push({
           event:"feedback_click",
-          data:$('#feedback').val()
+          data:$('#feedback_text').val()
         });
         $(this).html("Thank you!");
       });
