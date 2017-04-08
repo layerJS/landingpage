@@ -354,6 +354,10 @@ footer *
 {
     width: 100% !important;
 }
+[lj-name="menuframe"]
+{
+    display: none; /* only initally; will be overwritten by layerJS */
+}
 
 .trybox
 {
@@ -380,6 +384,7 @@ footer *
   margin-bottom: 15px;
 }
 #help {
+  display: none; /* initially only, will be overriden by layerJS */
   background-color: #C66094;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
