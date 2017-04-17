@@ -134,6 +134,71 @@
         </div>
       </div>
     </div>
+    <div class="row inset hidden-xs" style="margin: 0px;">
+      <div class="inset-box">
+      </div>
+      <div id="panels1">
+        <div>
+          <div id="collapse1" class="panel-collapse collapse">
+            <div id="example1" class="panel-body" style="padding: 0px;" data-annotate data-annotate-lang="html">
+              <div class="col-sm-3 col-sm-offset-1 annotation">
+              </div>
+              <div class="col-sm-1 anno-lines lines">
+              </div>
+              <div class="col-sm-6 anno-code clearfix">
+              </div>
+              <pre>
+    &lt;html&gt;
+
+    &lt;head&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;simple slider; medium.com example&quot;&gt;
+    &lt;script src=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.1.js&quot;&gt;&lt;/script&gt;
+    &lt;link href=&quot;https://cdn.layerjs.org/libs/layerjs/layerjs-0.4.1.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+    &lt;link href=&quot;https://cdn.layerjs.org/examples/slider/your-style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+    &lt;div lj-type=&quot;stage&quot;&gt; &lt;!--  Define a single stage.  --&gt;
+    &lt;!--  Define the layer &quot;slider&quot; for the slides.  --&gt;
+    &lt;!--  The default frame is &quot;frame1&quot; --&gt;
+    &lt;div lj-type=&quot;layer&quot; lj-name=&quot;slider&quot; lj-default-frame=&quot;frame1&quot; lj-native-scroll=&quot;false&quot;&gt;
+      &lt;!--  Define one frame per slide.  --&gt;
+      &lt;!--  lj-fit-to=&quot;cover&quot; will make sure that the stage will be fully filled with the frame.  --&gt;
+      &lt;!--  &quot;neighbors.l&quot;/&quot;r&quot; define which frames will be transitioned to upon left/right swipe gestures. --&gt;
+      &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame1&quot; lj-fit-to=&quot;cover&quot; lj-no-scrolling=&quot;true&quot; lj-start-position=&quot;center&quot; lj-neighbors.r=&quot;frame2&quot;&gt;
+        &lt;img src=&quot;https://cdn.layerjs.org/examples/slider/img/samples1a.png&quot;&gt;
+      &lt;/div&gt;
+      &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame2&quot; lj-fit-to=&quot;cover&quot; lj-no-scrolling=&quot;true&quot; lj-start-position=&quot;center&quot; lj-neighbors.l=&quot;frame1&quot; lj-neighbors.r=&quot;frame3&quot;&gt;
+        &lt;img src=&quot;https://cdn.layerjs.org/examples/slider/img/samples1b.png&quot;&gt;
+      &lt;/div&gt;
+      &lt;div lj-type=&quot;frame&quot; lj-name=&quot;frame3&quot; lj-fit-to=&quot;cover&quot; lj-no-scrolling=&quot;true&quot; lj-start-position=&quot;center&quot; lj-neighbors.l=&quot;frame2&quot;&gt;
+        &lt;img src=&quot;https://cdn.layerjs.org/examples/slider/img/samples1c.png&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--  A second layer for the controls --&gt;
+    &lt;div lj-type=&quot;layer&quot; lj-native-scroll=&quot;false&quot; id=&quot;arrows&quot;&gt;
+      &lt;!--  The control frame. The frame will be centered in the stage. --&gt;
+      &lt;div lj-type=&quot;frame&quot; lj-fit-to=&quot;width&quot; lj-start-position=&quot;center&quot; lj-no-scrolling=&quot;true&quot;&gt;
+        &lt;!--  the link will trigger the transition to the previous frame of the currently active frame in layer &quot;slider&quot;. --&gt;
+        &lt;a class=&quot;btn-left btn&quot; href=&quot;#slider.!left?p=right&quot;&gt;&amp;lt;&lt;/a&gt;
+        &lt;a class=&quot;btn-right btn&quot; href=&quot;#slider.!right?p=left&quot;&gt;&amp;gt;&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+      layerJS.init(); // initialize layerJS
+    &lt;/script&gt;
+    &lt;/body&gt;
+
+    &lt;/html&gt;
+    </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="inset-box clearfix">
+        </div>
+      </div>
     <div class="container example-container">
       <h3 class="text-center example-headline">Zoom UI</h3>
       <div class="row">
@@ -161,7 +226,7 @@
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;<a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels1" href="#collapse12">show full example</a>
+&lt;/div&gt;</pre><a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels12" href="#collapse12">show full example</a>
           </div>
         </div>
         <div class="col-md-5 col-sm-6 trybox">
@@ -173,7 +238,7 @@
     <div class="row inset hidden-xs" style="margin: 0px;">
       <div class="inset-box">
       </div>
-      <div id="panels1">
+      <div id="panels12">
         <div>
           <div id="collapse12" class="panel-collapse collapse">
             <div id="example12" class="panel-body" style="padding: 0px;" data-annotate data-annotate-lang="html">
