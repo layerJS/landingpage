@@ -5,9 +5,9 @@
 layerJS.init();
   jQuery('[lj-name="contentlayer"]').scroll(function(){
                                             var mlayer=layerJS.select('[lj-name="menulayer"]');
-                                            if (this.scrollTop>400 && mlayer.currentFrame==null){
+                                            if (this.scrollTop>400 && mlayer.currentFrame===null){
                                               mlayer.transitionTo('menuframe',{type:'down'});
-                                            } else if (this.scrollTop<400 && mlayer!==null){
+                                            } else if (this.scrollTop<400 && mlayer!==null && mlayer.currentFrame!==null){
                                               mlayer.transitionTo('!none',{type:'up'});
                                             }
   });
