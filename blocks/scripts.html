@@ -3,16 +3,22 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script>
   layerJS.init();
-  var _menumode = false;
+  var _menublock = false;
   jQuery('[lj-name="contentlayer"]').scroll(function() {
     var mlayer = layerJS.select('[lj-name="menulayer"]');
 
-    if (mlayer && !_menumode && this.scrollTop > 400 && mlayer.currentFrame === null) {
+    if (mlayer && !_menublock && this.scrollTop > 400 && mlayer.currentFrame === null) {
       mlayer.transitionTo('menuframe');
-      _menumode = true;
-    } else if (mlayer && this.scrollTop < 400 && _menumode && mlayer.currentFrame !== null) {
+      _menublock = true;
+      setTimeout(function() {
+        _menublock = false
+      }, 1000);
+    } else if (mlayer && !_menublock && this.scrollTop < 400 && mlayer.currentFrame !== null) {
       mlayer.transitionTo('!none');
-      _menumode = false;
+      _menublock = true;
+      setTimeout(function() {
+        _menublock = false
+      }, 1000);
     }
   });
 </script>
