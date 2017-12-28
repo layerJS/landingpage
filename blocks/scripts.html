@@ -2,14 +2,18 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script>
-layerJS.init();
-  jQuery('[lj-name="contentlayer"]').scroll(function(){
-                                            var mlayer=layerJS.select('[lj-name="menulayer"]');
-                                            if (this.scrollTop>400 && mlayer.currentFrame===null){
-                                              mlayer.transitionTo('menuframe',{type:'down'});
-                                            } else if (this.scrollTop<400 && mlayer!==null && mlayer.currentFrame!==null){
-                                              mlayer.transitionTo('!none',{type:'up'});
-                                            }
+  layerJS.init();
+  var _menumode = false;
+  jQuery('[lj-name="contentlayer"]').scroll(function() {
+    var mlayer = layerJS.select('[lj-name="menulayer"]');
+
+    if (mlayer && !_menumode && this.scrollTop > 400 && mlayer.currentFrame === null) {
+      mlayer.transitionTo('menuframe');
+      _menumode = true;
+    } else if (mlayer && this.scrollTop < 400 && _menumode && mlayer.currentFrame !== null) {
+      mlayer.transitionTo('!none');
+      _menumode = false;
+    }
   });
 </script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
