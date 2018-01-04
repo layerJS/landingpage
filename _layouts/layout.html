@@ -7,30 +7,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="canonical" href="http://layerjs.org/<%- theme.page %>"/>
-  <title>layerJS -
-    <%- theme.title %>
-  </title>
-  <script
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}"/>
+  <title>{{ page.title }}</title>
+  <!--<script
   src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js"
-  data-apikey="7ade43a65741ed827e5d137c59401484"></script>
+  data-apikey="7ade43a65741ed827e5d137c59401484"></script>-->
   <!-- Bootstrap core CSS -->
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <script src="assets/js/jquery.min.js"></script>
-  <!--<script src="assets/js/layerjs.js"></script>-->
+  <script src="js/jquery.min.js"></script>
+  <!--<script src="js/layerjs.js"></script>-->
   <script src="https://cdn.layerjs.org/libs/layerjs/layerjs-0.5.0.js"></script>
   <link href="https://cdn.layerjs.org/libs/layerjs/layerjs-0.5.0.css" type="text/css" rel="stylesheet" />
-  <link href="assets/font/stylesheet.css" type="text/css" rel="stylesheet" />
+  <link href="font/font.css" type="text/css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js" integrity="sha256-+mpyNVJsNt4rVXCw0F+pAOiB3YxmHgrbJsx4ecPuUaI=" crossorigin="anonymous" async></script>
-  <script src="assets/js/annotate.js" async></script>
-  <link rel="stylesheet" href="hljs.css" />
+  <script src="js/annotate.js" async></script>
+  <link rel="stylesheet" href="css/hljs.css" />
   <!-- Google Tag Manager -->
   <script>
     (function(w, d, s, l, i) {
@@ -50,24 +48,34 @@
   </script>
   <!-- End Google Tag Manager -->
 </head>
-
-<body lj-type="stage" lj-router="filerouter">
+<body lj-type="stage" lj-router="filerouter" lj-debug="true">
+  {% if page.background %}
+  <div lj-type="layer" lj-native-scroll="false" id="lbackground">
+    {% include {{ page.background }} %}
+  </div>
+  {% endif %}
+  <div lj-type="layer" id="lcontent">
+    <div lj-type="frame" lj-name="{{ page.title }}" lj-fit-to="responsive-width">
+    {{ content }}
+    {% include _blocks/footer.html %}
+    </div>
+  </div>
+  <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false" lj-default-frame="!none" lj-no-url="true">
+    {% include /_blocks/menu.html %}
+    </nav>
+  </div>
+  {% include _blocks/helplayer.html %}
+  {% if page.modals %}
+  <div lj-type="layer" id="lmodal" lj-default-frame="!none" lj-native-scroll="false">
+    {% include {{ page.modals }} %}
+  </div>
+  {% endif %}
+  {% include _blocks/scripts.html %}
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P4JV6H" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <!-- <div lj-type="layer" lj-name="footerlayer">
-    <div lj-type="frame" lj-name="footer" lj-start-position="bottom">
-      <%- include('../blocks/footer.html') %>
-    </div>
-  </div> -->
-  <div lj-type="layer" lj-name="contentlayer" lj-transition="left">
-    <%- theme.content %>
-  </div>
-    <%- include('../blocks/menulayer.html') %>
-    <%- include('../blocks/helplayer.html') %>
-      <%- include('../blocks/scripts.html') %>
 </body>
 
 </html>
