@@ -1,7 +1,7 @@
 ---
 title: home
 ---
-<link href="css/explain.css" type="text/css" rel='stylesheet'/>
+<link href="css/explain.css" type="text/css" rel='stylesheet' />
 <script src="js/explain.js" async></script>
 <section id="hero">
   <div class="container">
@@ -30,196 +30,219 @@ title: home
       <div class="col-md-1">
       </div>
       <div class="col-md-10">
-        <p>UX patterns like menus, sliders, layers &amp;&nbsp;lightboxes, parallax effects, page-swipes, zoom effects, etc. are really just <strong>interactive animated layers</strong>. layerJS provides <strong>one simple universal concept</strong> to create such patterns in pure
-          HTML.<br></p>
-        <p>layerJS is not a UI kit. Upon user interaction it simply animates "empty boxes" - we call them <strong> frames</strong>. What you put into the frames is totally up to you.</p>
+        <p>UX patterns like menus, sliders, layers &amp;&nbsp;lightboxes, parallax effects, page-swipes, zoom effects, etc. are really just <strong>interactive animated layers</strong>. layerJS provides <strong>one simple universal concept</strong> to create
+          such patterns in pure HTML.
+        </p>
+        <!--<p>layerJS is not a UI kit. Upon user interaction it simply animates "empty boxes" - we call them <strong> Frames</strong>. What you put into the Frames is totally up to you.</p>-->
       </div>
     </div>
+  </div>
+</section>
+<section class="explain">
+  <div class="container">
+    <h2>How layerJS works</h2>
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-10">
+        <p>In layerJS <span class="hframe">Frames</span> are containers that contain your content, like sub pages, menues, lightboxes, cards, slides, etc. These are fit into <span class="hstage">Stages</span> which are like virtual windows in which UI interaction
+          happens. </p>
+      </div>
+    </div>
+  </div>
+  {% include _blocks/explain.html %}
+</section>
+<section>
+  <div class="container">
+    <h2>Define in pure HTML</h2>
+    <div class="row">
+      <div class="col-md-8">
+        {% highlight html linenos %}
+<div lj-type="stage">
+  <div lj-type="layer">
+    <div id="f1" lj-type="frame">
+      … your HTML code …
+    </div>
+    <div id="f2" lj-type="frame">
+      … your HTML code …
+    </div>
+  </div>
+</div>{% endhighlight %}
+      </div>
+      <div class="col-md-4">
+        <p>Simply define <span class="hstage">Stages</span> and <span class="hframe">Frames</span> by adding attributes to HTML elements. Define the dimensions of the Stages through CSS. <span class="hlayer">Layers</span> allow overlaying Frames. Each Stage
+          needs at least one Layer. Use HTML links to trigger transitions, e.g. {% highlight html %}<a href="#f2">Frame 2</a>{% endhighlight %}</p>
+      </div>
+    </div>
+    <div class="full_cta">
+      <a class="btn btn-key" href="./examples.html">Get started with examples</a>
+    </div>
+
   </div>
 </section>
 <section>
   <div class="container">
-    <h2>How layerJS works - Stages &amp; Frames</h2>
-  </div>
-
-<div id="principle" class="section">
-  <div id="explainer">
-    <div id="explainer-text">
-      <b>layerJS</b> lets you animate your user interface in pure HTML and CSS.
-    </div>
-  </div>
-  <div id="window">
-    <div class="windowbar">
-      <i class="windowbar icon-cancel-circle"></i>
-      <i class="windowbar icon-circle-down"></i>
-      <i class="windowbar icon-circle-up"></i>
-    </div>
-    <div lj-type="stage" id="stage">
-      <div lj-type="layer" lj-default-frame="content1" lj-native-scroll="false" id="clayer" lj-no-url="true">
-        <!-- The layer for the main content -->
-        <div lj-type="frame" class="content" id="content1" lj-fit-to="responsive-width" lj-neighbors.r="content2" lj-neighbors.l="content4">
-          <p>
-            ▄▄▄▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄▄▄▄▄ ▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄ ▄▄▄▄▄
-            <br />
-            <br />
-            <br />
-            <br />
-          </p>
-        </div>
-        <div lj-type="frame" class="content" id="content2" lj-fit-to="responsive-width" lj-neighbors.r="content3" lj-neighbors.l="content1">
-          <p>
-            ▄▄▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄▄ ▄▄▄▄▄▄▄
-          </p>
-          <p>
-            ▄▄▄▄▄▄▄ ▄▄▄▄▄ ▄▄▄ ▄▄▄▄▄
-          </p>
-        </div>
-        <div lj-type="frame" class="content" id="content3" lj-fit-to="responsive-width" lj-neighbors.r="content4" lj-neighbors.l="content2">
-          <p>
-            ▄▄▄▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄▄▄▄▄ ▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄ ▄▄▄▄▄
-          </p>
-          <div lj-type="stage" class="nestedstage" id="sslider">
-            <div lj-type="layer" lj-native-scroll="false" lj-fit-to="cover" id="slayer" lj-no-url="true">
-              <img id="i1" lj-type="frame" lj-start-position="center" lj-no-scrolling="true" src="img/angel-leon-271147.jpg" lj-neighbors.r="i2" lj-neighbors.l="i3" />
-              <img id="i2" lj-type="frame" lj-start-position="center" lj-no-scrolling="true" src="img/dimitri-yakymuk-107955.jpg" lj-neighbors.r="i3" lj-neighbors.l="i1" />
-              <img id="i3" lj-type="frame" lj-start-position="center" lj-no-scrolling="true" src="img/jordan-sanchez-46261.jpg" lj-neighbors.r="i1" lj-neighbors.l="i2" />
-            </div>
-            <div class="hl tl"></div>
-            <div class="hl tr"></div>
-            <div class="hl bl"></div>
-            <div class="hl br"></div>
+    <h2>Fitting modes &amp; responsiveness</h2>
+    <div class="row">
+      <div class="col-md-8">
+        <p>Since your content will display on various screen sizes, the aspect ratios of your Stages and Frames will generally not match. layerJS offers different fitting modes, including <strong>width, height, cover, contain, responsive, responsive-width, responsive-height</strong>.
+          Just select a mode using an HTML attribute: {% highlight html %}
+          <div lj-type="frame" lj-fit-to="responsive-width"></div>{% endhighlight %}</p>
+        <p>
+          Depending on the fitting mode, scrolling may occur. The initial scroll position can be any of <strong>top, left, bottom, right, center, top-center, bottom-left, etc.</strong>. This will be set with: {% highlight html %}
+          <div lj-type="frame" lj-start-position="top"></div>{% endhighlight %}</p>
+        </p>
+        <p>
+          You can disable scrolling using {% highlight html %}
+          <div lj-type="frame" lj-no-scrolling="true"></div>{% endhighlight %}</p>
+        You can still define an initial "scroll" position to specify the alignment of the Frame.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <figure class="drawing" style="width:150px;height:380px">
+          <div class="dframe" style="top:0px;left:0px;width:150px;height:100px;">
+            <p>
+              ▄▄▄▄▄▄▄ ▄▄▄▄
+            </p>
           </div>
-          <p>
-            ▄▄▄▄ ▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄ ▄▄▄▄▄ ▄▄▄ ▄ ▄▄▄ ▄▄▄ ▄▄▄
-          </p>
-        </div>
-        <div lj-type="frame" class="content" id="content4" lj-fit-to="responsive-width" lj-neighbors.r="content1" lj-neighbors.l="content3">
-          <div lj-type="stage" id="scards">
-            <div lj-type="layer" lj-native-scroll="false" lj-layout="canvas" id="canvas" lj-default-frame="overview" lj-fit-to="width" lj-no-url="true">
-              <div lj-type="frame" id="overview" lj-x="0" lj-y="0" class="lj-active">
-              </div>
-              <div lj-type="frame" class="card" lj-y="20" id="card1" lj-x="20">
-                <div class="cardcontainer">
-                  <a href="#top.card1&amp;t=0.5s"><img class="cardimg" src="img/profile.png"></a>
-                  <a style="float:right" href="#canvas.card1$&amp;t=0.5s" class="icon-cancel-circle"></a>
-                  <h2>▄▄▄▄</h2>
-                  <h3>▄▄▄▄▄▄▄</h3>
-                  <hr style="clear: both">
-                  <p>
-                    ▄▄▄▄ ▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄ ▄▄▄▄▄ ▄▄▄ ▄ ▄▄▄ ▄▄▄ ▄▄▄
-                  </p>
+          <div class="dstage" style="top:0px;left:20px;width:110px;height:100px;">
 
-                </div>
-
-              </div>
-              <div lj-type="frame" class="card" lj-y="20" id="card2" lj-x="160">
-                <div class="cardcontainer">
-                  <a href="#top.card2&amp;t=0.5s"><img class="cardimg" src="img/profile.png"></a>
-                  <a style="float:right" href="#canvas.card2$&amp;t=0.5s" class="icon-cancel-circle"></a>
-                  <h2>▄▄▄▄</h2>
-                  <h3>▄▄▄▄▄▄▄</h3>
-                  <hr style="clear: both">
-                  <p>
-                    ▄▄▄▄ ▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄ ▄▄▄▄▄ ▄▄▄ ▄ ▄▄▄ ▄▄▄ ▄▄▄
-                  </p>
-
-                </div>
-
-              </div>
-              <div lj-type="frame" class="card" lj-y="160" id="card3" lj-x="20">
-                <div class="cardcontainer">
-                  <a href="#top.card3&amp;t=0.5s"><img class="cardimg" src="img/profile.png"></a>
-                  <a style="float:right" href="#canvas.card3$&amp;t=0.5s" class="icon-cancel-circle"></a>
-                  <h2>▄▄▄▄</h2>
-                  <h3>▄▄▄▄▄▄▄</h3>
-                  <hr style="clear: both">
-                  <p>
-                    ▄▄▄▄ ▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄ ▄▄▄▄▄ ▄▄▄ ▄ ▄▄▄ ▄▄▄ ▄▄▄
-                  </p>
-
-                </div>
-
-              </div>
-
-            </div>
           </div>
-        </div>
-      </div>
-      <div lj-type="layer" lj-default-frame="!none" id="mlayer" lj-native-scroll="false" lj-no-url="true">
-        <div lj-type="frame" id="hmenu" class="nav" lj-fit-to="responsive-width" lj-transition="down" lj-neighbors.l="menu">
-          <!-- The frame for the menu in the closed state -->
-          ▄▄▄▄ ▄▄
-        </div>
-        <div lj-type="frame" id="menu" class="nav menu" lj-fit-to="responsive-height" lj-neighbors.r="hmenu" lj-transition="slideOverRight">
-          ▄▄▄ <br /> ▄▄▄ <br />▄▄▄<br /> ▄▄▄
-        </div>
-      </div>
-      <div lj-type="layer" lj-default-frame="!none" id="top" lj-native-scroll="false" lj-fit-to="responsive" lj-no-url="true">
-        <!-- The layer for the lightbox. The initial frame is the special frame "!none" which repesents an empty layer. -->
-        <div lj-type="frame" id="box1" lj-fit-to="responsive" lj-transition="fade">
-          <!-- The content of the modal. -->
-        </div>
-      </div>
-      <div class="hl tl"></div>
-      <div class="hl tr"></div>
-      <div class="hl bl"></div>
-      <div class="hl br"></div>
+          <div class="dframe" style="top:160px;left:20px;width:110px;height:200px;padding:10px;">
+            <p>
+              ▄▄▄▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄▄▄▄
+            </p>
+          </div>
+          <div class="dstage" style="top:180px;left:20px;width:110px;height:80px;">
 
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row howto-step">
-    <div class="col-xs-12 col-sm-4">
-      <img class="howto-step-img" src="img/frames.svg" width="300" style="padding-top:30px;">
-    </div>
-    <div class="col-xs-12 col-sm-8">
-      <div class="row">
-        <div class="col-xs-2">
-          <h3 class="pull-right">1.</h3>
-        </div>
-        <div class="col-xs-10">
-          <h3>Organize content in Frames</h3>
-          <p>Instead of creating complete HTML pages with code for menues or sliders, simply design all parts of your site as separate static HTML &amp; CSS fragments, the Frames.</p>
-        </div>
+          </div>
+        </figure>
       </div>
     </div>
+    <div class="full_cta">
+      <a class="btn btn-key" href="https://github.com/layerJS/layerJS/wiki/Frames">See Frame attributes</a>
+    </div>
+
   </div>
-  <div class="row howto-step">
-    <div class="clearfix col-xs-12 col-sm-4">
-      <img class="howto-step-img" src="img/stages.svg" width="200" style="padding-top:30px;">
-    </div>
-    <div class="col-xs-12 col-sm-8">
-      <div class="row">
-        <div class="col-xs-2">
-          <h3 class="pull-right">2.</h3>
-        </div>
-        <div class="col-xs-10">
-          <h3>Stages define positions</h3>
-          <p>Stages are rectangular areas which &nbsp;define where the Frames (page-content, menu-panes, lightbox content, slides) will be displayed dynamically in your final page.&nbsp;</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row howto-step">
-    <div class="clearfix col-xs-12 col-sm-4">
-      <img class="howto-step-img" src="img/transition.svg" width="300" style="padding-top:30px;">
-    </div>
-    <div class="col-xs-12 col-sm-8">
-      <div class="row">
-        <div class="col-xs-2">
-          <h3 class="pull-right">3.</h3>
-        </div>
-        <div class="col-xs-10">
-          <h3>UI composition &amp; state transitions</h3>
-          <p>Frames are dynamically fit into Stages to compose the final user interface. Upon user interaction, the state of the user interface changes by exchanging one or more Frames in one or more Stages using an animated transition.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 </section>
 <section>
+  <div class="container">
+    <h2>Transitions</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <figure class="drawing" style="width:240px;height:200px">
+          <div class="dframe" style="top:0px;left:0px;width:110px;height:100px;padding:10px;">
+            <p>
+              ▄▄▄▄▄▄ ▄▄▄▄
+            </p>
+          </div>
+          <div class="dstage" style="top:0px;left:65px;width:110px;height:100px;">
+
+          </div>
+          <div class="dframe" style="top:0px;left:130px;width:110px;height:200px;padding:10px;">
+            <p>
+              ▄▄▄▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄▄▄▄
+            </p>
+          </div>
+          <div style="top:15px;left:85px;">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="493.356px" height="493.356px" viewBox="0 0 493.356 493.356" style="transform: scale(0.15);transform-origin: 0 0" xml:space="preserve">
+            <g>
+            	<path d="M490.498,239.278l-109.632-99.929c-3.046-2.474-6.376-2.95-9.993-1.427c-3.613,1.525-5.427,4.283-5.427,8.282v63.954H9.136   c-2.666,0-4.856,0.855-6.567,2.568C0.859,214.438,0,216.628,0,219.292v54.816c0,2.663,0.855,4.853,2.568,6.563   c1.715,1.712,3.905,2.567,6.567,2.567h356.313v63.953c0,3.812,1.817,6.57,5.428,8.278c3.62,1.529,6.95,0.951,9.996-1.708   l109.632-101.077c1.903-1.902,2.852-4.182,2.852-6.849C493.356,243.367,492.401,241.181,490.498,239.278z" style="fill: rgb(121, 121, 121);"></path>
+            </g>
+          </svg>
+
+          </div>
+        </figure>
+      </div>
+      <div class="col-md-8">
+        <p>Every Layer has an active Frame. Transitions are exchanging the current active Frame of a Layer with a target Frame using an animation. Different transition types exist, among others <strong>left, right, up, down, fade, blur, zoomin, zoomout</strong>.
+          The active Frame can become the special "!none" Frame in which case no Frame is shown. You can specify the transition type in a link (see "Routing" section) or as Frame or Layer attribute: </p>
+        {% highlight html %}
+        <div lj-type="frame" lj-transition="left"></div>{% endhighlight %}
+
+        <p>
+          Layouts define which Frames are shown where. The default Layout is the Slide-Layout which only shows the active Frame fitted into the Stage. During a transition the current Frame and the target FRame are shown. See the <a href="https://github.com/layerJS/layerJS/wiki/Layouts">Layouts sections in the Wiki</a>.
+        </p>
+        <p>
+          Interstage transitions allow sending Frames across Layers and Stages. This allows for example to "zoom" a Frame from a grid to fullscreen.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h2>Routing & State</h2>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <p>Using a standard HTML link you can trigger transitions. The link should contain a '#' followed by the Frame name or id. This will make the Frame the active Frame in the containing Layer. {% highlight html %}<a href="#f1&p=right&t=1s"></a>{% endhighlight
+          %} You can add the parameters 'p' for the transition type and 't' for the transition duration.</p>
+        <p>
+          There exist special Frames like <strong>!none, !next, !prev</strong>. You will need to specify a Layer id or name in order to use them: {% highlight html %}<a href="#sliderlayer.!next"></a>{% endhighlight %} If you specify a Layer and a Frame
+          from a different Layer you will trigger an interstage transition. {% highlight html %}<a href="#otherlayer.f1"></a>{% endhighlight %}
+        </p>
+        <p>
+          The State of the UI defines which Frames are in which Layers (and hence in which Stages) and which Frames are active. The State is represented by an array of paths:
+{% highlight html %}
+stage.contentlayer.home
+stage.menulayer.leftmenu
+stage.popuplayer.!none{% endhighlight %}
+          You can supply such an array as link using ';' as separator to trigger several transitions at the same time. It is usually sufficient to only supply Layer name and Frame name and only supply the paths that should change: {% highlight
+          html %}<a href="#contentlayer.f2;menulayer.!none"></a>{% endhighlight %}
+        </p>
+        <p>
+          Transitions change the State. The State will be represented by the URL. When you transition from 'f1' to 'f2' the URL will change:
+          {% highlight html %}
+https://domain.com#f1 --> https://domain.com#f2{% endhighlight %}
+          The URL will only show State information that diverts from the default State. Generally, the first Frame in a Layer will be the default active Frame unless you specify a default Frame using:
+          {% highlight html %}
+<div lj-type="layer" id="menulayer" lj-default-frame="!none"></div>{% endhighlight %}
+          URL modifications can be disabled per Layer using the 'lj-no-url' Layer attribute.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h2>Gestures</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <figure class="drawing" style="width:240px;height:200px">
+          <div class="dframe" style="top:0px;left:0px;width:110px;height:100px;padding:10px;">
+            <p>
+              ▄▄▄▄▄▄ ▄▄▄▄
+            </p>
+          </div>
+          <div class="dstage" style="top:0px;left:35px;width:110px;height:100px;">
+
+          </div>
+          <div class="dframe" style="top:0px;left:130px;width:110px;height:200px;padding:10px;">
+            <p>
+              ▄▄▄▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄▄▄▄
+            </p>
+          </div>
+          <div style="top:25px;left:55px;">
+            <img src="img/swipeleft.svg" width="64" alt="One finger swipe left gesture outlined hand symbol free icon" title="One finger swipe left gesture outlined hand symbol free icon">
+
+          </div>
+        </figure>
+      </div>
+      <div class="col-md-8">
+        <p>Gestures can trigger transitions. This includes touch gestures and swipes on the touchpad. There exist 4 directions <strong>left, right, up, down</strong>. Those directional gestures will trigger transitons to frames that are specified in the neigbor property of the Frame.
+        {% highlight html %}
+<div lj-type="frame" id="f2" lj-neighbors.l="f1" lj-neighbors.r="f3"></div>{% endhighlight %}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- <section>
   <div class="container">
     <h2> Why layerJS is different</h2>
     <div class="row">
@@ -240,7 +263,7 @@ title: home
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <a name="feedback">&nbsp;</a>
 <section class="">
   <div class="container">

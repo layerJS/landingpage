@@ -1,15 +1,26 @@
 #principle * {
   font-size: 28px;
 }
+
+section.explain {
+  background-color: transparent;
+  pointer-events: none;
+}
+
+section.explain>* {
+  pointer-events: all;
+}
+
 #principle.section {
   font-size: 28px;
   background-color: white;
   text-align: center;
-  overflow: hidden;
+  overflow: visible;
   height: 500px;
-  color: #ddd;
+  color: gray;
   padding: 25px;
   position: relative;
+  z-index: -20;
 }
 
 #principle #stage {
@@ -150,15 +161,21 @@
   box-sizing: border-box;
 }
 
-#principle #explainer .hframe {
+.hframe {
+  font-weight: bold;
+  font-size: 120%;
   color: rgba(0, 250, 200, 1);
 }
 
-#principle #explainer .hstage {
+.hstage {
+  font-weight: bold;
+  font-size: 120%;
   color: rgba(250, 0, 250, 1);
 }
 
-#principle #explainer .hlayer {
+.hlayer {
+  font-weight: bold;
+  font-size: 120%;
   color: rgba(50, 50, 50, 1);
 }
 
