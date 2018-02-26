@@ -38,6 +38,7 @@ section.explain>* {
   outline: 1px solid transparent;
   /* this makes edges antialiased */
   text-align: left;
+  position: relative;
 }
 
 #principle [lj-type="frame"] {
@@ -151,32 +152,84 @@ section.explain>* {
 
 #principle #explainer {
   position: absolute;
-  right: 0px;
-  width: 30%;
+  bottom: 0px;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   padding: 20px;
   box-sizing: border-box;
+  pointer-events: none;
+}
+
+#explainer-text {
+  width: 500px;
+  max-widht: 100%;
+  text-align: left;
+}
+
+#explainer-text>span {
+  background-color: rgba(0, 100, 250, 0.7);
+  color: white;
 }
 
 .hframe {
   font-weight: bold;
   font-size: 120%;
   color: rgba(0, 250, 200, 1);
+  text-shadow: 0px 0px 2px gray;
 }
 
 .hstage {
   font-weight: bold;
   font-size: 120%;
   color: rgba(250, 0, 250, 1);
+  text-shadow: 0px 0px 2px gray;
 }
 
 .hlayer {
   font-weight: bold;
   font-size: 120%;
   color: rgba(50, 50, 50, 1);
+  text-shadow: 0px 0px 2px gray;
+}
+
+#principle #play {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+}
+
+#principle #play i {
+  color: rgba(250, 0, 250, 0.7);
+  font-size: 72px;
+  text-shadow: 0px 0px 15px #aaa;
+  cursor: pointer;
+  transition: font-size 0.2s
+}
+#principle #play i:hover {
+  color: rgba(250, 0, 250, 1);
+  font-size: 86px;
+  text-shadow: 0px 0px 15px white;
+}
+
+#principle #replay {
+  position: absolute;
+  top:0px;
+  right: 30px;
+  cursor: pointer;
+  margin: 10px;
+  display: none;
+  text-shadow: 0px 0px 10px white;
+}
+#principle #replay span{
+  text-decoration: underline;
 }
 
 /* manually remove 3d separation from grid canvas example */

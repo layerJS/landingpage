@@ -69,6 +69,17 @@ section>div>h2
     text-transform: uppercase;
 }
 
+.layerjs-center img{
+  vertical-align: baseline;
+}
+.layerjs-center {
+  margin-top:50px;
+  font-size: 48px;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
     font-size: 18px;
     box-sizing: border-box;
