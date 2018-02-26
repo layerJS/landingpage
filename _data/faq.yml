@@ -8,10 +8,31 @@
   a: Add the menu layer after the content layer. Later element in HMTL will overlay former elements. Or use z-index to define the order of the layer manually
 
 - q: How can I modify the appearance of my frames
-  a: layerJS does nothing with the appearance of frames (except changing width and height in some fitting modes). You can give you frames ids or classes and use CSS to style it.
+  a: layerJS does nothing to the appearance of frames (except changing width and height in some fitting modes). You can give your frames ids or classes and use CSS to style it.
 
 - q: How are frames named and referenced
   a: you can give frames a regular HTML id or use the attribute 'lj-name'. lj-name will supercede id. This can be used in links e.g. "href='#framename'"
 
+- q: I'd like my frame to attach to one side of my stage (e.g. a sidemenu on the left)
+  a: You need to work with a combination of fitting and start position. If you would like to left or right choose one of the height fitting modes (lj-fit-to="height" or lj-fit-to="responsive-height") and then set lj-start-position="left" or "right". You can attach to top or bottom in a similar way.
+
 - q: I want to show a specific frame / no frame at startup
   a: Use "lj-default-frame='framename'" at a layer to define which frame is initially shown. If nothing is given, the first frame is shown. you can start with no frame using "lj-default-frame='!none'"
+
+- q: How does "responsive" work with layerJS?
+  a: layerJS does not directly deal with responsive-ness. It also doesn't interfere. You would - as always - use media queries to define how the frames and stages are shown on different devices. layerJS adds a few more options to your responsive design by offering different fitting modes like fit to width/height, cover or contain. For pure responsive styling with CSS media queries use the fitting modes responsive-width, responsive or repsonsive-height.
+
+- q: How can i change the transition type?
+  a: use the attribute 'lj-transition' at the frame or layer or add '&p=...' to a link. Possible transition types are none, left, right, top, bottom, fade. blur, zoomout, zoomin. This can be extended. Ask us!
+
+- q: How can I avoid that certain frames are shown in the URL?
+  a: just add 'lj-no-url' to the layer from which no frames should be shown in the URL.
+
+- q: Swiping left/right doesn't have an effect
+  a: In order for gestures to work you need to specify which neighbor frames are on which side. Use 'lj-nighbors.r="name"' to specify the frame on the right side. use .l, .t, .b for the user directions.
+
+- q: How can I arrange multiple frames in a grid (or other layout)?
+  a: you need to switch the layout to canvas (default is slide layout). Use lj-layout="canvas". Now you can specify lj-x and lj-y positions (in pixels) on a virtual plane. Also you can specify frame dimensions with lj-width and lj-height. Note, you need to add a larger frame that contains all other frames and that is active to show the grid/layout of the other frames. See the Zoom-UI example.
+
+- q: How can I create a responsive menu?
+  a: The easiest way is to use the same frames for all devices and just adapt the CSS with mediaqueries. If you need a different menu logic you need to make different frames for mobile and desktop. You can create different links to the different frames (or with different transition types) and hide them for mobile or desktop, respectively.
