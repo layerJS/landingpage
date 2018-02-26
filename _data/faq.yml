@@ -1,0 +1,17 @@
+- q: I can't see my frames / stage height is zero
+  a: Frames are positioned absolutely so the stage is basically an empty div which gets a height of 0px. Simply define the desired dimension of your stage using CSS and layerJS will fit the frame into it. Also check if layerJS is included correctly and there is no error message on console complaining about layerJS not being found.
+
+- q: My frame's content is very big / very small
+  a: By default layerJS will fit to "width". If your frame only contains little content it has a small width and layerJS will scale it to fit the stage. Give the frame a reasonable width with CSS or use another fitting mode (e.g. lj-fit-to="responsive-width")
+
+- q: I added a menu but it is covered by other content
+  a: Add the menu layer after the content layer. Later element in HMTL will overlay former elements. Or use z-index to define the order of the layer manually
+
+- q: How can I modify the appearance of my frames
+  a: layerJS does nothing with the appearance of frames (except changing width and height in some fitting modes). You can give you frames ids or classes and use CSS to style it.
+
+- q: How are frames named and referenced
+  a: you can give frames a regular HTML id or use the attribute 'lj-name'. lj-name will supercede id. This can be used in links e.g. "href='#framename'"
+
+- q: I want to show a specific frame / no frame at startup
+  a: Use "lj-default-frame='framename'" at a layer to define which frame is initially shown. If nothing is given, the first frame is shown. you can start with no frame using "lj-default-frame='!none'"
