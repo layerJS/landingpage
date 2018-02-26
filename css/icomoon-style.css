@@ -51,3 +51,9 @@
 .icon-circle-down:before {
   content: "\ea43";
 }
+.icon-menu:before {
+  content: "\e9bd";
+}
+.icon-cross:before {
+  content: "\ea0f";
+}

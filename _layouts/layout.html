@@ -59,11 +59,15 @@
     {% include _blocks/footer.html %}
     </div>
   </div>
+  {% include _blocks/helplayer.html %}
+  <div lj-type="layer" id="menubackdrop" lj-native-scroll="false" lj-default-frame="!none" lj-transition="fade" lj-no-url="true">
+    <a href="#menubackdrop.!none;menuframe" lj-type="frame" id="backdrop"></a>
+  </div>
   <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false" lj-default-frame="{% if page.title=="home" %}!none{% else %}menuframe{% endif %}" lj-no-url="true">
     {% include /_blocks/menu.html %}
+    {% include /_blocks/sidemenu.html %}
     </nav>
   </div>
-  {% include _blocks/helplayer.html %}
   {% if page.modals %}
   <div lj-type="layer" id="lmodal" lj-default-frame="!none" lj-native-scroll="false">
     {% include {{ page.modals }} %}
