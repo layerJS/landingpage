@@ -23,7 +23,7 @@
     <![endif]-->
   <script src="js/jquery.min.js"></script>
   <!--<script src="js/layerjs.js"></script>-->
-  <script src="https://cdn.layerjs.org/libs/layerjs/layerjs-0.5.2.min.js"></script>
+  <script src="https://cdn.layerjs.org/libs/layerjs/layerjs-0.5.2.js"></script>
   <link href="https://cdn.layerjs.org/libs/layerjs/layerjs-0.5.2.css" type="text/css" rel="stylesheet" />
   <link href="font/font.css" type="text/css" rel="stylesheet" />
   <link href="css/icomoon-style.css" type="text/css" rel="stylesheet" />
@@ -47,7 +47,7 @@
   </script>
   <!-- End Google Tag Manager -->
 </head>
-<body lj-type="stage" lj-router="filerouter" lj-debug="false">
+<body lj-type="stage" lj-router="filerouter">
   {% if page.background %}
   <div lj-type="layer" lj-native-scroll="false" id="lbackground">
     {% include {{ page.background }} %}
@@ -59,7 +59,7 @@
     {% include _blocks/footer.html %}
     </div>
   </div>
-  <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false" lj-default-frame="!none" lj-no-url="true">
+  <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false" lj-default-frame="{% if page.title=="home" %}!none{% else %}menuframe{% endif %}" lj-no-url="true">
     {% include /_blocks/menu.html %}
     </nav>
   </div>
