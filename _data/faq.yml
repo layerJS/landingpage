@@ -32,7 +32,7 @@
   a: In order for gestures to work you need to specify which neighbor frames are on which side. Use 'lj-nighbors.r="name"' to specify the frame on the right side. use .l, .t, .b for the user directions.
 
 - q: How can I arrange multiple frames in a grid (or other layout)?
-  a: you need to switch the layout to canvas (default is slide layout). Use lj-layout="canvas". Now you can specify lj-x and lj-y positions (in pixels) on a virtual plane. Also you can specify frame dimensions with lj-width and lj-height. Note, you need to add a larger frame that contains all other frames and that is active to show the grid/layout of the other frames. See the Zoom-UI example.
+  a: you need to switch the layout to canvas (default is slide layout). Use lj-layout="canvas". Now you can specify lj-x and lj-y positions (in pixels) for each frame on a virtual plane. Also you can specify frame dimensions with lj-width and lj-height. Note, you need to add a larger frame that contains all other frames and that is active to show the grid/layout of the other frames. See the Zoom-UI example.
 
 - q: How can I create a responsive menu?
   a: The easiest way is to use the same frames for all devices and just adapt the CSS with mediaqueries. If you need a different menu logic you need to make different frames for mobile and desktop. You can create different links to the different frames (or with different transition types) and hide them for mobile or desktop, respectively.
