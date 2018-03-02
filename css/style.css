@@ -311,7 +311,14 @@ nav form .form-control
 @media (max-width: 767px) {
   nav form .form-control
   {
-      width: 150px;
+      width: 120px;
+  }
+
+}
+@media (max-width: 340px) {
+  nav form .form-control
+  {
+      width: 80px;
   }
 
 }
@@ -345,8 +352,9 @@ nav .menu-action:hover, nav .menu-action:active, nav .menu-action:visited, nav .
 }
 
 #sidemenu {
-  width:330px;
+  width:320px;
   display: none;
+  min-height: 100vh;
 }
 #sidemenu .menu-logo {
   color: black
