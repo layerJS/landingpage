@@ -232,7 +232,11 @@ section.explain>* {
 #principle #replay span{
   text-decoration: underline;
 }
-
+@media (max-width: 640px){
+  #principle #replay {
+    top: -30px;
+  }
+}
 /* manually remove 3d separation from grid canvas example */
 
 #principle #window [lj-type="layer"]#canvas {
