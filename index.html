@@ -100,14 +100,14 @@ title: home
       <div class="col-md-8">
         <p>Since your content will display on various screen sizes, the aspect ratios of your Stages and Frames will generally not match. layerJS offers different fitting modes, including <strong>width, height, cover, contain, responsive, responsive-width, responsive-height</strong>.
           Just select a mode using an HTML attribute: {% highlight html %}
-          <div lj-type="frame" lj-fit-to="responsive-width"></div>{% endhighlight %}</p>
+<div lj-type="frame" lj-fit-to="responsive-width"></div>{% endhighlight %}</p>
         <p>
           Depending on the fitting mode, scrolling may occur. The initial scroll position can be any of <strong>top, left, bottom, right, center, top-center, bottom-left, etc.</strong>. This will be set with: {% highlight html %}
-          <div lj-type="frame" lj-start-position="top"></div>{% endhighlight %}</p>
+<div lj-type="frame" lj-start-position="top"></div>{% endhighlight %}</p>
         </p>
         <p>
           You can disable scrolling using {% highlight html %}
-          <div lj-type="frame" lj-no-scrolling="true"></div>{% endhighlight %}</p>
+<div lj-type="frame" lj-no-scrolling="true"></div>{% endhighlight %}</p>
         You can still define an initial "scroll" position to specify the alignment of the Frame.
         </p>
       </div>
@@ -171,7 +171,7 @@ title: home
         <p>Every Layer has an active Frame. Transitions are exchanging the current active Frame of a Layer with a target Frame using an animation. Different transition types exist, among others <strong>left, right, up, down, fade, blur, zoomin, zoomout</strong>.
           The active Frame can become the special "!none" Frame in which case no Frame is shown. You can specify the transition type in a link (see "Routing" section) or as Frame or Layer attribute: </p>
         {% highlight html %}
-        <div lj-type="frame" lj-transition="left"></div>{% endhighlight %}
+<div lj-type="frame" lj-transition="left"></div>{% endhighlight %}
 
         <p>
           Layouts define which Frames are shown where. The default Layout is the Slide-Layout which only shows the active Frame fitted into the Stage. During a transition the current Frame and the target FRame are shown. See the <a href="https://github.com/layerJS/layerJS/wiki/Layouts">Layouts sections in the Wiki</a>.
