@@ -220,6 +220,10 @@ section.explain>* {
   text-shadow: 0px 0px 15px white;
 }
 
+#principle #play span {
+  display: none;
+}
+
 #principle #replay {
   position: absolute;
   top:0px;
