@@ -118,15 +118,17 @@ function animation() {
     ['3d', 0, 'off', 1],
   ]);
 }
-$(function(){
-  $('#principle #play').click(function(){
-    animation();
-    $('#principle #play').fadeOut(500);
-    $('#principle #replay').fadeIn(500);
-    layerJS.router.navigate('#explain-animation&t=1s');
-  });
-  $('#principle #replay').click(function(){
-    animation();
-    layerJS.router.navigate('#explain-animation&t=1s');
+deferReady(function() {
+  $(function() {
+    $('#principle #play').click(function() {
+      animation();
+      $('#principle #play').fadeOut(500);
+      $('#principle #replay').fadeIn(500);
+      layerJS.router.navigate('#explain-animation&t=1s');
+    });
+    $('#principle #replay').click(function() {
+      animation();
+      layerJS.router.navigate('#explain-animation&t=1s');
+    });
   });
 });

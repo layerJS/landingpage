@@ -290,22 +290,24 @@ https://domain.com#f1 --> https://domain.com#f2{% endhighlight %}
     </p>
   </div>
   <script>
-    $('#feedback_text').on('blur', function() {
-      if (!$(this).val()) return;
-      dataLayer = dataLayer || [];
-      dataLayer.push({
-        event: "feedback_blur",
-        data: $(this).val()
+    deferReady(function(){
+      $('#feedback_text').on('blur', function() {
+        if (!$(this).val()) return;
+        dataLayer = dataLayer || [];
+        dataLayer.push({
+          event: "feedback_blur",
+          data: $(this).val()
+        });
       });
-    });
-    $('#feedback_send').on('click', function() {
-      if (!$('#feedback_text').val()) return;
-      dataLayer = dataLayer || [];
-      dataLayer.push({
-        event: "feedback_click",
-        data: $('#feedback_text').val()
+      $('#feedback_send').on('click', function() {
+        if (!$('#feedback_text').val()) return;
+        dataLayer = dataLayer || [];
+        dataLayer.push({
+          event: "feedback_click",
+          data: $('#feedback_text').val()
+        });
+        $(this).html("Thank you!");
       });
-      $(this).html("Thank you!");
     });
   </script>
 </section>

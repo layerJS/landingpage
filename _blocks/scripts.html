@@ -1,59 +1,59 @@
-<!-- Bootstrap core JavaScript
-================================================== -->
+<!-- Bootstrap core JavaScript ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script>
-  var _menublock = false;
-  layerJS.defaults.defaultDuration = "0.5s";
-  jQuery('#lcontent').scroll(function() {
-    var mlayer = layerJS.select('[lj-name="menulayer"]');
 
-    if (mlayer && !_menublock && this.scrollTop > 400 && mlayer.currentFrame === null) {
-      mlayer.transitionTo('menuframe');
-      _menublock = true;
-      setTimeout(function() {
-        _menublock = false
-      }, 1000);
-    } else if (mlayer && !_menublock && this.scrollTop < 400 && mlayer.currentFrame !== null) {
-      mlayer.transitionTo('!none');
-      _menublock = true;
-      setTimeout(function() {
-        _menublock = false
-      }, 1000);
-    }
-  });
-  layerJS.getState().on('stateChanged',function(){
-    /*if (layerJS.select('#lcontent').currentFrame.name()==='home'){
-      if (this.scrollTop > 400 && mlayer.currentFrame === null) {
+<script>
+  deferReady(function() {
+    var _menublock = false;
+    layerJS.defaults.defaultDuration = "0.5s";
+
+    jQuery('#lcontent').scroll(function() {
+      var mlayer = layerJS.select('[lj-name="menulayer"]');
+
+      if (mlayer && !_menublock && this.scrollTop > 400 && mlayer.currentFrame === null) {
         mlayer.transitionTo('menuframe');
         _menublock = true;
         setTimeout(function() {
           _menublock = false
         }, 1000);
-      } else if (this.scrollTop < 400 && mlayer.currentFrame !== null) {
+      } else if (mlayer && !_menublock && this.scrollTop < 400 && mlayer.currentFrame !== null) {
         mlayer.transitionTo('!none');
         _menublock = true;
         setTimeout(function() {
           _menublock = false
         }, 1000);
       }
+    });
+    layerJS.getState().on('stateChanged', function() {
+      /*if (layerJS.select('#lcontent').currentFrame.name()==='home'){
+        if (this.scrollTop > 400 && mlayer.currentFrame === null) {
+          mlayer.transitionTo('menuframe');
+          _menublock = true;
+          setTimeout(function() {
+            _menublock = false
+          }, 1000);
+        } else if (this.scrollTop < 400 && mlayer.currentFrame !== null) {
+          mlayer.transitionTo('!none');
+          _menublock = true;
+          setTimeout(function() {
+            _menublock = false
+          }, 1000);
+        }
 
-    } else {
-      mlayer.transitionTo('menuframe');
-      _menublock = true;
+      } else {
+        mlayer.transitionTo('menuframe');
+        _menublock = true;
 
-    }
-    console.log(arguments);*/
-    if (layerJS.select('#lcontent').currentFrame.name()==='home'){
-      _menublock=false;
-    } else {
-      _menublock=true;
-    }
-  })
+      }
+      console.log(arguments);*/
+      if (layerJS.select('#lcontent').currentFrame.name() === 'home') {
+        _menublock = false;
+      } else {
+        _menublock = true;
+      }
+    });
+  });
 </script>
-<script src="bootstrap/js/bootstrap.min.js" async></script>
+<script src="bootstrap/js/bootstrap.min.js" defer></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="js/ie10-viewport-bug-workaround.js" async></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js" integrity="sha256-+mpyNVJsNt4rVXCw0F+pAOiB3YxmHgrbJsx4ecPuUaI=" crossorigin="anonymous"></script>
-    <script>
-hljs.initHighlightingOnLoad();
-</script>-->
+<script src="js/ie10-viewport-bug-workaround.js" defer></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js" integrity="sha256-+mpyNVJsNt4rVXCw0F+pAOiB3YxmHgrbJsx4ecPuUaI=" crossorigin="anonymous"></script> <script> hljs.initHighlightingOnLoad(); </script>-->

@@ -7,8 +7,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="canonical" href="{{ site.url }}{{ page.url }}"/>
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
   <title>{{ page.title }}</title>
+  <script>
+    (function() {
+        var cr_req = ['layerJS', 'jQuery'];
+        var cr_stat = false;
+        var cr_cb = [];
+        var checkReq = function() {
+          var cr_stat = true;
+          for (var i = 0; i < cr_req.length; i++) {
+            if (!window.hasOwnProperty(cr_req[i])) {
+              cr_stat = false;
+            }
+          }
+          if (cr_stat) {
+            run();
+          } else {
+            setTimeout(checkReq, 100);
+          }
+        };
+        var run = function() {
+          while (cr_cb.length) {
+            (cr_cb.shift())();
+          }
+        };
+        window.addEventListener('DOMContentLoaded', function() {
+          checkReq();
+        });
+        window.deferReady = function(cb) {
+          cr_cb.push(cb);
+          if (cr_stat) run();
+        };
+    })();
+  </script>
   <!--<script
   src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js"
   data-apikey="7ade43a65741ed827e5d137c59401484"></script>-->
@@ -21,13 +53,13 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <script src="js/jquery.min.js" async></script>
-  <!--<script src="js/layerjs.js"></script>-->
-  <script src="https://cdn.layerjs.org/libs/layerjs/layerjs-0.5.2.min.js" asnyc></script>
+  <script src="js/jquery.min.js" defer></script>
+  <script src="js/layerjs.js" defer></script>
+  <!--<script src="https://cdn.layerjs.org/libs/layerjs/layerjs-0.5.2.js" defer></script>-->
   <link href="https://cdn.layerjs.org/libs/layerjs/layerjs-0.5.2.css" type="text/css" rel="stylesheet" />
   <link href="font/font.css" type="text/css" rel="stylesheet" />
   <link href="css/icomoon-style.css" type="text/css" rel="stylesheet" />
-  <!--<link rel="stylesheet" href="css/hljs.css" />-->
+  <link rel="stylesheet" href="css/hljs.css" />
   <!-- Google Tag Manager -->
   <script>
     (function(w, d, s, l, i) {
@@ -47,7 +79,8 @@
   </script>
   <!-- End Google Tag Manager -->
 </head>
-<body lj-type="stage" lj-router="filerouter">
+
+<body lj-type="stage" lj-router="filerouter" lj-debug="true">
   {% if page.background %}
   <div lj-type="layer" lj-native-scroll="false" id="lbackground">
     {% include {{ page.background }} %}
@@ -55,24 +88,20 @@
   {% endif %}
   <div lj-type="layer" id="lcontent">
     <div lj-type="frame" lj-name="{{ page.title }}" lj-fit-to="responsive-width">
-    {{ content }}
-    {% include _blocks/footer.html %}
+      {{ content }} {% include _blocks/footer.html %}
     </div>
   </div>
   {% include _blocks/helplayer.html %}
   <div lj-type="layer" id="menubackdrop" lj-native-scroll="false" lj-default-frame="!none" lj-transition="fade" lj-no-url="true">
-    <a href="#menubackdrop.!none;menuframe" lj-fit-to="responsive-width" lj-type="frame" id="backdrop"></a>
+    <a href="#menubackdrop.!none;lmodal.!none;menuframe" lj-fit-to="responsive-width" lj-type="frame" id="backdrop"></a>
   </div>
-  <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false" lj-default-frame="{% if page.title=="home" %}!none{% else %}menuframe{% endif %}" lj-no-url="true">
-    {% include /_blocks/menu.html %}
-    {% include /_blocks/sidemenu.html %}
+  <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false" lj-default-frame="{% if page.title==" home " %}!none{% else %}menuframe{% endif %}" lj-no-url="true">
+    {% include /_blocks/menu.html %} {% include /_blocks/sidemenu.html %}
     </nav>
   </div>
-  {% if page.modals %}
-  <div lj-type="layer" id="lmodal" lj-default-frame="!none" lj-native-scroll="false">
-    {% include {{ page.modals }} %}
+  <div lj-type="layer" id="lmodal" lj-default-frame="!none" lj-native-scroll="false" lj-no-url="true">
+    {% include _blocks/popup_typeform.html %} {% if page.modals %} {% include {{ page.modals }} %} {% endif %}
   </div>
-  {% endif %}
   {% include _blocks/scripts.html %}
   <!-- Google Tag Manager (noscript) -->
   <noscript>
