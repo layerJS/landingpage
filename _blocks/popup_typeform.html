@@ -73,7 +73,7 @@
           }
           exitintent = false;
 
-        }, 30000);
+        }, 60000);
       }
       document.querySelector('#typeformframe .menu-close').addEventListener('click', function (event) {
         if (!document.cookie.match(/typeform\-popup\=success/)) {
@@ -109,8 +109,15 @@
           typeformfixed = true;
           // fix typeform fuckup on mobile where it shows a start page to start the typeform.
           document.querySelector('#typeformframe [data-qa="start-button"]').dispatchEvent(new Event('click', { bubbles: true }));
+          document.querySelector('#typeformframe [data-qa="close-button-mobile"]').addEventListener('click', function (event) {
+            // fix for typeform opening a popup inside the popup on mobile. if the users closes the form it should also close the original popup
+            if (!document.cookie.match(/typeform\-popup\=success/)) {
+              document.cookie = "typeform-popup=closed;path=/;max-age=" + 60 * 60 * 24;
+            }
+            layerJS.router.navigate('#lmodal.!none;menubackdrop.!none');
+          });
         }
-      })
+      });
     });
   </script>
 </div>
