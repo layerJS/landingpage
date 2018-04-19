@@ -95,9 +95,8 @@
   <div lj-type="layer" id="menubackdrop" lj-native-scroll="false" lj-default-frame="!none" lj-transition="fade" lj-no-url="true">
     <a href="#menubackdrop.!none;lmodal.!none;menuframe" lj-fit-to="responsive-width" lj-type="frame" id="backdrop"></a>
   </div>
-  <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false" lj-default-frame="{% if page.title==" home " %}!none{% else %}menuframe{% endif %}" lj-no-url="true">
+  <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false" lj-default-frame="{% if page.title=='home' %}!none{% else %}menuframe{% endif %}" lj-no-url="true">
     {% include /_blocks/menu.html %} {% include /_blocks/sidemenu.html %}
-    </nav>
   </div>
   <div lj-type="layer" id="lmodal" lj-default-frame="!none" lj-native-scroll="false" lj-no-url="true">
     {% include _blocks/popup_typeform.html %} {% if page.modals %} {% include {{ page.modals }} %} {% endif %}
