@@ -1,17 +1,20 @@
 {
-  "name": "layerJS website",
+  "name": "layerjs_website",
   "description": "layerJS, a lean javascript UX framework",
   "author": "LayerJs",
   "version": "0.0.0",
   "devDependencies": {
     "rimraf": "latest",
     "scripty": "latest",
-    "mkdirp" : "latest",
-    "lite-server" : "latest",
-    "explainjs" : "latest"
+    "mkdirp": "latest",
+    "lite-server": "latest",
+    "explainjs": "latest"
   },
   "scripts": {
     "clean": "rimraf _site/*",
     "lite": "lite-server"
+  },
+  "dependencies": {
+    "npm": "^5.8.0"
   }
 }
