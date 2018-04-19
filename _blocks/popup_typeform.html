@@ -102,7 +102,15 @@
           iframe.src = linker.decorate(iframe.src);
         }
       }
-      setTimeout(decorateIframe, 2000)
+      setTimeout(decorateIframe, 2000);
+      var typeformfixed = false;
+      layerJS.select('#lmodal').on('transitionStarted', function (name) {
+        if (name === 'typeformframe' && !typeformfixed) {
+          typeformfixed = true;
+          // fix typeform fuckup on mobile where it shows a start page to start the typeform.
+          document.querySelector('#typeformframe [data-qa="start-button"]').dispatchEvent(new Event('click', { bubbles: true }));
+        }
+      })
     });
   </script>
 </div>
