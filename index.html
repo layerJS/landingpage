@@ -133,25 +133,26 @@ title: home
     <h2>Define in pure HTML</h2>
     <div class="row">
       <div class="col-md-8">
-        {% highlight html linenos %}
-        <div lj-type="stage">
-          <div lj-type="layer">
-            <div id="f1" lj-type="frame">
-              … your HTML code …
-            </div>
-            <div id="f2" lj-type="frame">
-              … your HTML code …
-            </div>
-          </div>
-        </div>{% endhighlight %}
+{% highlight html linenos %}
+<div lj-type="stage">
+  <div lj-type="layer">
+    <div id="f1" lj-type="frame">
+      … your HTML code …
+    </div>
+    <div id="f2" lj-type="frame">
+      … your HTML code …
+    </div>
+  </div>
+</div>{% endhighlight %}
       </div>
       <div class="col-md-4">
         <p>Simply define
           <span class="hstage">Stages</span> and
           <span class="hframe">Frames</span> by adding attributes to HTML elements. Define the dimensions of the Stages through CSS.
           <span class="hlayer">Layers</span> allow overlaying Frames. Each Stage needs at least one Layer. Use HTML links to trigger transitions,
-          e.g. {% highlight html %}
-          <a href="#f2">Frame 2</a>{% endhighlight %}</p>
+          e.g. 
+{% highlight html %}
+<a href="#f2">Frame 2</a>{% endhighlight %}</p>
       </div>
     </div>
     <div class="row">
@@ -159,9 +160,9 @@ title: home
         <p>
           To make everything work simply include layerJS in the head of you document.
         </p>
-        {% highlight html linenos %}
-        <script src="https://cdn.layerjs.org/libs/layerjs/layerjs-0.5.2.min.js"></script>
-        <link href="https://cdn.layerjs.org/libs/layerjs/layerjs-0.5.2.css" type="text/css" rel="stylesheet" /> {% endhighlight %}
+{% highlight html linenos %}
+<script src="https://cdn.layerjs.org/libs/layerjs/layerjs-0.5.2.min.js"></script>
+<link href="https://cdn.layerjs.org/libs/layerjs/layerjs-0.5.2.css" type="text/css" rel="stylesheet" /> {% endhighlight %}
       </div>
     </div>
     <div class="full_cta">
@@ -178,17 +179,19 @@ title: home
         <p>Since your content will display on various screen sizes, the aspect ratios of your Stages and Frames will generally
           not match. layerJS offers different fitting modes, including
           <strong>width, height, cover, contain, responsive, responsive-width, responsive-height</strong>. Just select a mode using
-          an HTML attribute: {% highlight html %}
-          <div lj-type="frame" lj-fit-to="responsive-width"></div>{% endhighlight %}</p>
+          an HTML attribute: 
+{% highlight html %}
+<div lj-type="frame" lj-fit-to="responsive-width"></div>{% endhighlight %}</p>
         <p>
           Depending on the fitting mode, scrolling may occur. The initial scroll position can be any of
-          <strong>top, left, bottom, right, center, top-center, bottom-left, etc.</strong>. This will be set with: {% highlight html
-          %}
-          <div lj-type="frame" lj-start-position="top"></div>{% endhighlight %}</p>
+          <strong>top, left, bottom, right, center, top-center, bottom-left, etc.</strong>. This will be set with: 
+{% highlight html %}
+<div lj-type="frame" lj-start-position="top"></div>{% endhighlight %}</p>
         </p>
         <p>
-          You can disable scrolling using {% highlight html %}
-          <div lj-type="frame" lj-no-scrolling="true"></div>{% endhighlight %}</p>
+          You can disable scrolling using 
+{% highlight html %}
+<div lj-type="frame" lj-no-scrolling="true"></div>{% endhighlight %}</p>
         You can still define an initial "scroll" position to specify the alignment of the Frame.
         </p>
       </div>
@@ -257,8 +260,8 @@ title: home
           <strong>left, right, up, down, fade, blur, zoomin, zoomout</strong>. The active Frame can become the special "!none" Frame
           in which case no Frame is shown. You can specify the transition type in a link (see "Routing" section) or as Frame
           or Layer attribute: </p>
-        {% highlight html %}
-        <div lj-type="frame" lj-transition="left"></div>{% endhighlight %}
+{% highlight html %}
+<div lj-type="frame" lj-transition="left"></div>{% endhighlight %}
 
         <p>
           Layouts define which Frames are shown where. The default Layout is the Slide-Layout which only shows the active Frame fitted
@@ -281,30 +284,43 @@ title: home
       <div class="col-md-1"></div>
       <div class="col-md-10">
         <p>Using a standard HTML link you can trigger transitions. The link should contain a '#' followed by the Frame name
-          or id. This will make the Frame the active Frame in the containing Layer. {% highlight html %}
-          <a href="#f1&p=right&t=1s"></a>{% endhighlight %} You can add the parameters 'p' for the transition type and 't' for the transition duration.</p>
+          or id. This will make the Frame the active Frame in the containing Layer. 
+{% highlight html %}
+<a href="#f1&p=right&t=1s"></a>{% endhighlight %} 
+          You can add the parameters 'p' for the transition type and 't' for the transition duration.</p>
         <p>
           There exist special Frames like
-          <strong>!none, !next, !prev</strong>. You will need to specify a Layer id or name in order to use them: {% highlight html
-          %}
-          <a href="#sliderlayer.!next"></a>{% endhighlight %} If you specify a Layer and a Frame from a different Layer you will trigger an interstage
-          transition. {% highlight html %}
-          <a href="#otherlayer.f1"></a>{% endhighlight %}
+          <strong>!none, !next, !prev</strong>. You will need to specify a Layer id or name in order to use them: 
+{% highlight html %}
+<a href="#sliderlayer.!next"></a>{% endhighlight %} 
+          If you specify a Layer and a Frame from a different Layer you will trigger an interstage
+          transition. 
+{% highlight html %}
+<a href="#otherlayer.f1"></a>{% endhighlight %}
         </p>
         <p>
           The State of the UI defines which Frames are in which Layers (and hence in which Stages) and which Frames are active. The
-          State is represented by an array of paths: {% highlight html %} stage.contentlayer.home stage.menulayer.leftmenu
-          stage.popuplayer.!none{% endhighlight %} You can supply such an array as link using ';' as separator to trigger
+          State is represented by an array of paths: 
+{% highlight html %}
+stage.contentlayer.home stage.menulayer.leftmenu
+stage.popuplayer.!none{% endhighlight %} 
+          You can supply such an array as link using ';' as separator to trigger
           several transitions at the same time. It is usually sufficient to only supply Layer name and Frame name and only
-          supply the paths that should change: {% highlight html %}
-          <a href="#contentlayer.f2;menulayer.!none"></a>{% endhighlight %}
+          supply the paths that should change: 
+{% highlight html %}
+<a href="#contentlayer.f2;menulayer.!none"></a>{% endhighlight %}
         </p>
         <p>
           Transitions change the State. The State will be represented by the URL. When you transition from 'f1' to 'f2' the URL will
-          change: {% highlight html %} https://domain.com#f1 --> https://domain.com#f2{% endhighlight %} The URL will only
+          change: 
+{% highlight html %}
+https://domain.com#f1 --> https://domain.com#f2{% endhighlight %} 
+          The URL will only
           show State information that diverts from the default State. Generally, the first Frame in a Layer will be the default
-          active Frame unless you specify a default Frame using: {% highlight html %}
-          <div lj-type="layer" id="menulayer" lj-default-frame="!none"></div>{% endhighlight %} URL modifications can be disabled per Layer using the 'lj-no-url' Layer attribute.
+          active Frame unless you specify a default Frame using: 
+{% highlight html %}
+<div lj-type="layer" id="menulayer" lj-default-frame="!none"></div>{% endhighlight %} 
+          URL modifications can be disabled per Layer using the 'lj-no-url' Layer attribute.
         </p>
       </div>
     </div>
@@ -339,8 +355,9 @@ title: home
       <div class="col-md-8">
         <p>Gestures can trigger transitions. This includes touch gestures and swipes on the touchpad. There exist 4 directions
           <strong>left, right, up, down</strong>. Those directional gestures will trigger transitons to frames that are specified
-          in the neigbor property of the Frame. {% highlight html %}
-          <div lj-type="frame" id="f2" lj-neighbors.l="f1" lj-neighbors.r="f3"></div>{% endhighlight %}
+          in the neigbor property of the Frame. 
+{% highlight html %}
+<div lj-type="frame" id="f2" lj-neighbors.l="f1" lj-neighbors.r="f3"></div>{% endhighlight %}
         </p>
       </div>
     </div>
