@@ -660,3 +660,15 @@ code {
   background-color: #eee;
 
 }
+
+.benefits .col {
+    text-align:center;
+}
+.benefits .icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    stroke-width: 0;
+    stroke: #60C694;
+    fill: #60C694;
+  }
