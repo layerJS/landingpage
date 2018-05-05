@@ -436,10 +436,11 @@ footer *
     margin-right: 5px;
 }
 
-.mobile-github-btn
+.github-btn
 {
     margin: auto;
     margin-top: 20px;
+    margin-bottom: 20px;
     width: 190px;
     font-size: 20px;
 }
