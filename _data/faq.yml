@@ -13,6 +13,9 @@
 - q: How are frames named and referenced
   a: you can give frames a regular HTML id or use the attribute 'lj-name'. lj-name will supercede id. This can be used in links e.g. "href='#framename'"
 
+- q: What about SEO?
+  a: If you put all you frames into one page you get a single page app/site. However you can use the special <a href="https://github.com/layerjs/layerjs/wiki/Links">FileRouter</a> which can put content in different HTML documents with different URLs and still be able to transition between them. This allows search engines to seperately index those documents.
+
 - q: I'd like my frame to attach to one side of my stage (e.g. a sidemenu on the left)
   a: You need to work with a combination of fitting and start position. If you would like to left or right choose one of the height fitting modes (lj-fit-to="height" or lj-fit-to="responsive-height") and then set lj-start-position="left" or "right". You can attach to top or bottom in a similar way.
 
