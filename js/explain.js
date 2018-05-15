@@ -43,7 +43,7 @@ var animator = function(commands) {
       var w = document.querySelector('#window');
       w.style.transition = 'transform ' + command[1] + 's';
       document.querySelectorAll('[lj-type]').forEach(function(e) {
-        e.style.transition = 'border ' + command[1] + 's';
+        //e.style.transition = 'border ' + command[1] + 's';
       });
       if (command[0] === 'off') {
         w.className = "d3t";
@@ -71,7 +71,7 @@ function animation() {
     ['text', 0, '<b><span class="hlayer">layerJS</span></b> lets you animate your user interface in pure HTML and CSS.', 0],
     ['scroll', 1, '#clayer', 0, 200, 1],
     ['navigate', 0, '#slayer.i3'],
-    ['navigate', 5, '#mlayer.!none'],
+    ['navigate', 3, '#mlayer.!none'],
 
     ['fadeout', 0, '#window', 0],
     ['fadeout', 0, '#stage', 0],
@@ -80,7 +80,7 @@ function animation() {
     ['navigate', 0, '#clayer.content1', 0],
     ['navigate', 0, '#slayer.i1'],
 
-    ['text', 3, 'How does this work?<br><br><br><br>', 0],
+    ['text', 2, 'How does this work?<br><br><br><br>', 0],
     ['fadein', 0, '#window', 0],
     ['text', 0, 'This is the browser window.', 0],
     ['3d', 4, 'on', 1],
