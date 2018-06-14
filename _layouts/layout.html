@@ -6,7 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="">
-  <meta name="description" content="layerJS: build animated layered web user interfaces in pure HTML" />
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}layerJS: build animated layered web user interfaces in pure HTML{% endif %}" />
+
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}layerJS: build animated layered web user interfaces in pure HTML{% endif %}" />
 
   <!-- Schema.org markup for Google+ -->
   <meta itemprop="name" content="layerJS">
@@ -19,10 +21,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
   <meta property="og:image" content="{{ site.url }}/img/layers_black.jpg" />
-  <meta property="og:description" content="layerJS: build animated layered web user interfaces in pure HTML" />  
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}layerJS: build animated layered web user interfaces in pure HTML{% endif %}" />  
   <meta name="google-site-verification" content="Mt0kPMXG2VgggwYWUEHRMfxl-aHkIQc_TWZOtHp4Wg0" />
   <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
-  <title>{{ page.title }}</title>
+  <title>{% if page.title %}{{page.title}}{% else %}layerJS{% endif %}</title>
   <script>
     (function() {
         var cr_req = ['layerJS', 'jQuery'];
@@ -107,7 +109,7 @@
   </div>
   {% endif %}
   <div lj-type="layer" id="lcontent">
-    <div lj-type="frame" lj-name="{{ page.title }}" lj-fit-to="responsive-width">
+    <div lj-type="frame" lj-name="{{ page.frame }}" lj-fit-to="responsive-width">
       {{ content }} {% include _blocks/footer.html %}
     </div>
   </div>
@@ -115,7 +117,7 @@
   <div lj-type="layer" id="menubackdrop" lj-native-scroll="false" lj-default-frame="!none" lj-transition="fade" lj-no-url="true">
     <a href="#menubackdrop.!none;lmodal.!none;menuframe" lj-fit-to="responsive-width" lj-type="frame" id="backdrop"></a>
   </div>
-  <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false" lj-default-frame="{% if page.title=='home' %}!none{% else %}menuframe{% endif %}" lj-no-url="true">
+  <div lj-type="layer" lj-name="menulayer" lj-native-scroll="false" lj-default-frame="{% if page.frame=='home' %}!none{% else %}menuframe{% endif %}" lj-no-url="true">
     {% include /_blocks/menu.html %} {% include /_blocks/sidemenu.html %}
   </div>
   <div lj-type="layer" id="lmodal" lj-default-frame="!none" lj-native-scroll="false" lj-no-url="true">
