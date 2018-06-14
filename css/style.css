@@ -673,3 +673,31 @@ code {
     stroke: #60C694;
     fill: #60C694;
   }
+
+.signup {
+    background: -moz-linear-gradient(left, rgba(15,138,148,1) 0%, #b9f5b7 100%);
+    background: -webkit-linear-gradient(left, rgba(15,138,148,1) 0%,#b9f5b7 100%);
+    background: linear-gradient(to right, rgba(15,138,148,1) 0%,#b9f5b7 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f8a94', endColorstr='#b9f5b7',GradientType=1 );
+    color: #eee;
+    text-shadow: 0px 0px 5px rgba(15,138,148,1);
+
+}
+section.signup h2 {
+    color: white;
+}
+.signup strong {
+   /* color: #C66094;*/
+   color: white;
+}
+.signup table{
+    margin: -5px;
+    width: 100%;
+}
+.signup .row .row div {
+    padding: 5px;
+}
+.signup .row .row button {
+    width: 100%;
+    background-color: #C66094
+}
