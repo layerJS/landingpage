@@ -53,6 +53,9 @@ h2
     font-weight: normal;
 }
 
+h4 {
+    font-weight: bold;
+}
 section {
   /*background-color: white;*/
 }
