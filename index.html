@@ -317,10 +317,109 @@ description: UX patterns like menus, sliders, layers & lightboxes, parallax effe
 </section>
 <section>
   <div class="container">
+    <h2>Control with CSS</h2>
+    <div class="row">
+      <div class="col-md-8">
+        <p>Alternative to controlling layerJS by HTML attributes (<code>lj-*</code> or <code>data-lj-*</code>) you can also use CSS. The advantage is that you can make the behaviour itself responsive by using media queries.</p>
+{% highlight css %}
+#menu {
+  width: 100px;
+  --lj-fit-to: responsive-height;
+  --lj-transition: left;
+}
+@media (max-width: 640px) {
+  #menu {
+    --lj-fit-to: responsive;
+    --lj-transition: fade;
+  }
+}{% endhighlight %}
+        <p>
+          The above example will modify the fitting mode and the transition type of a frame with id <code>menu</code> for screens smaller than 640px.
+        </p>
+        <p>
+          You can use any layerJS attribute also in CSS except <code>lj-type</code>, <code>lj-name</code>. You can mix CSS properties and HTML attributes, in which case CSS properties will precede.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <figure class="drawing" style="width:150px;height:380px">
+          <div class="dframe" style="top:0px;left:0px;width:150px;height:100px;">
+            <p>
+              ▄▄▄▄▄▄▄ ▄▄▄▄
+            </p>
+          </div>
+          <div class="dmframe" style="top:0px;left:0px;width:50px;height:100px;">
+            <p>
+              ▄▄ ▄▄ ▄▄
+            </p>
+          </div>
+          <div class="dstage" style="top:0px;left:0px;width:150px;height:100px;">
+
+          </div>
+          <div class="dframe" style="top:160px;left:40px;width:70px;height:100px;padding:10px;">
+            <p>
+              ▄▄▄▄
+              ▄▄▄▄
+            </p>
+          </div>
+          <div class="dmframe" style="top:160px;left:40px;width:70px;height:100px;padding:10px;">
+            <p>
+              ▄▄
+              ▄▄
+              ▄▄
+            </p>
+          </div>
+          <div class="dstage" style="top:160px;left:40px;width:70px;height:100px;padding:10px;">
+
+          </div>
+        </figure>
+      </div>
+    </div>
+    <div class="full_cta">
+      <a class="btn btn-key" href="https://github.com/layerJS/layerJS/wiki/Frame-Fitting">See Frame attributes</a>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
     <h2>Routing & State</h2>
     <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
+        <div class="col-md-4">
+            <figure class="drawing" style="width:240px;height:240px">
+              <code style="position:absolute;top:0px;left:0px;width:110px;height:35px;padding:10px;">
+                d.com/#f1
+              </code>
+              <div class="dframe" style="top:40px;left:0px;width:110px;height:200px;padding:10px;">
+                <p>
+                  ▄▄▄▄▄▄ ▄▄▄▄
+                </p>
+              </div>
+              <div class="dstage" style="top:40px;left:65px;width:110px;height:100px;">
+    
+              </div>
+              <code style="position:absolute;top:0px;left:130px;width:110px;height:35px;padding:10px;">
+                d.com/#f2
+              </code>
+              <div class="dframe" style="top:40px;left:130px;width:110px;height:200px;padding:10px;">
+                <p>
+                  ▄▄▄▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄▄▄▄
+                </p>
+              </div>
+              <div style="top:55px;left:85px;">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                  width="493.356px" height="493.356px" viewBox="0 0 493.356 493.356" style="transform: scale(0.15);transform-origin: 0 0"
+                  xml:space="preserve">
+                  <g>
+                    <path d="M490.498,239.278l-109.632-99.929c-3.046-2.474-6.376-2.95-9.993-1.427c-3.613,1.525-5.427,4.283-5.427,8.282v63.954H9.136   c-2.666,0-4.856,0.855-6.567,2.568C0.859,214.438,0,216.628,0,219.292v54.816c0,2.663,0.855,4.853,2.568,6.563   c1.715,1.712,3.905,2.567,6.567,2.567h356.313v63.953c0,3.812,1.817,6.57,5.428,8.278c3.62,1.529,6.95,0.951,9.996-1.708   l109.632-101.077c1.903-1.902,2.852-4.182,2.852-6.849C493.356,243.367,492.401,241.181,490.498,239.278z"
+                      style="fill: rgb(121, 121, 121);"></path>
+                  </g>
+                </svg>
+    
+              </div>
+            </figure>
+          </div>
+      <div class="col-md-8">
         <p>Using a standard HTML link you can trigger transitions. The link should contain a '#' followed by the Frame name
           or id. This will make the Frame the active Frame in the containing Layer. 
 {% highlight html %}
@@ -360,7 +459,7 @@ https://domain.com#f1 --> https://domain.com#f2{% endhighlight %}
 <div lj-type="layer" id="menulayer" lj-default-frame="!none"></div>{% endhighlight %} 
           URL modifications can be disabled per Layer using the 'lj-no-url' Layer attribute.
         </p>
-      </div>
+      </div>      
     </div>
 
   </div>
@@ -369,27 +468,7 @@ https://domain.com#f1 --> https://domain.com#f2{% endhighlight %}
   <div class="container">
     <h2>Gestures</h2>
     <div class="row">
-      <div class="col-md-4">
-        <figure class="drawing" style="width:240px;height:200px">
-          <div class="dframe" style="top:0px;left:0px;width:110px;height:100px;padding:10px;">
-            <p>
-              ▄▄▄▄▄▄ ▄▄▄▄
-            </p>
-          </div>
-          <div class="dstage" style="top:0px;left:35px;width:110px;height:100px;">
 
-          </div>
-          <div class="dframe" style="top:0px;left:130px;width:110px;height:200px;padding:10px;">
-            <p>
-              ▄▄▄▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄▄▄▄
-            </p>
-          </div>
-          <div style="top:25px;left:55px;">
-            <img src="img/swipeleft.svg" width="64" alt="One finger swipe left gesture outlined hand symbol free icon" title="One finger swipe left gesture outlined hand symbol free icon">
-
-          </div>
-        </figure>
-      </div>
       <div class="col-md-8">
         <p>Gestures can trigger transitions. This includes touch gestures and swipes on the touchpad. There exist 4 directions
           <strong>left, right, up, down</strong>. Those directional gestures will trigger transitons to frames that are specified
@@ -398,6 +477,27 @@ https://domain.com#f1 --> https://domain.com#f2{% endhighlight %}
 <div lj-type="frame" id="f2" lj-neighbors.l="f1" lj-neighbors.r="f3"></div>{% endhighlight %}
         </p>
       </div>
+      <div class="col-md-4">
+          <figure class="drawing" style="width:240px;height:200px">
+            <div class="dframe" style="top:0px;left:0px;width:110px;height:100px;padding:10px;">
+              <p>
+                ▄▄▄▄▄▄ ▄▄▄▄
+              </p>
+            </div>
+            <div class="dstage" style="top:0px;left:35px;width:110px;height:100px;">
+  
+            </div>
+            <div class="dframe" style="top:0px;left:130px;width:110px;height:200px;padding:10px;">
+              <p>
+                ▄▄▄▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄▄▄▄
+              </p>
+            </div>
+            <div style="top:25px;left:55px;">
+              <img src="img/swipeleft.svg" width="64" alt="One finger swipe left gesture outlined hand symbol free icon" title="One finger swipe left gesture outlined hand symbol free icon">
+  
+            </div>
+          </figure>
+        </div>
     </div>
 
   </div>
