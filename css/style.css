@@ -32,6 +32,11 @@ h1
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f8a94', endColorstr='#b9f5b7',GradientType=1 )
 }
 
+#hero h1 div{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 @media (max-width:767px)
 {
     #hero
@@ -59,7 +64,7 @@ h2
 section {
   /*background-color: white;*/
 }
-section>div>h2
+section>div>h2, section>div>h1
 {
     text-align: center;
     font-weight: 300;
@@ -287,13 +292,15 @@ nav a:hover
 {
 }
 
-nav h1
+nav .hlogo
 {
     margin: 0px;
     padding: 10px;
+    font-weight: bold;
+    line-height: 1.1;
 }
 
-nav h1, nav h1 *
+nav .hlogo, nav .hlogo *
 {
     font-size: 40px;
 }
