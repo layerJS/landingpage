@@ -216,6 +216,7 @@ pre
 .full_cta .btn {
   font-size: 22px;
   color: black;
+  margin: 5px;
 }
 
 [data-annotate] pre
@@ -254,6 +255,7 @@ pre
 
 html
 {
+    overflow: hidden;
     height: 100%;
 }
 
