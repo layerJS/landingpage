@@ -124,6 +124,7 @@ body {
     background-color: white;
     margin-bottom: 30px;
     padding: 15px;
+    padding-bottom: 45px;
 }
 
 .sample-header
@@ -141,10 +142,17 @@ body {
 
 .whitebox a
 {
-    position: absolute;
+    float: right;
+    /* position: absolute;
     bottom: 50px;
-    right: 40px;
+    right: 40px; */
     z-index: 100;
+}
+
+.whitebox .highlight {
+  background-color: initial;
+  box-shadow: initial;
+  margin: 0px;
 }
 
 pre
@@ -155,6 +163,10 @@ pre
     margin: 0px;
 }
 
+.whitebox .highlight pre code, .whitebox .highlight pre code * {
+  white-space: pre;
+  font-size: 12px;
+}
 .shadow-down
 {
     position: absolute;
@@ -248,7 +260,7 @@ pre
     padding-bottom: 20px;
 }
 
-.example-container:nth-child(4n+2)
+.example-container:nth-child(4n+2), section.examples:nth-child(2n) .example-container
 {
     background-color: #f8f8f8;
 }
