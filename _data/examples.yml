@@ -1,0 +1,31 @@
+-
+  title: Slider
+  description: A slider needs a single stage, a layer and one frame for each slide. Use regular links to control the slider.
+  longdesc: These links will reference a specific frame (e.g. "#frame1") or use special names like "#slider.!next" or "#slider.!prev", where slider is the layer name. lj-default-frame will indicate the frame that is shown initally.
+  include: _examples/slider.html
+  hint: "Try below: swipe or click arrows"
+  iframe: https://cdn.layerjs.org/examples/slider/index.html
+-
+  title: Zoom UI
+  description: Zooming patterns, as often found in mobile apps, can be created with the "canvas" layout. Here, frames have fixed positions on the "canvas" and can be scaled or rotated. During transitions, the canvas is transformed (moved, scaled, rotated) such that the active frame fits into the stage.
+  include: _examples/zoom.html
+  hint: "Try below: swipe or click thumbs"
+  iframe: https://cdn.layerjs.org/examples/zoom-noiframe/index.html
+-
+  title: Parallax
+  description: Parallax effects can be created with two overlapping layers in a stage. If the frame in the upper layer is longer than the stage, it will scroll within the stage. Transparent areas in this frame will reveal the lower non-scrolling frame created the parallax effect.
+  include: _examples/parallax.html
+  hint: "Try below: scroll to see the parallax"
+  iframe: https://cdn.layerjs.org/examples/parallax/index.html
+-
+  title: Side Menu
+  description: A layer can be used to create a menu floating on top of the regular content. The menu can be opened and closed using layerJS transitions between two or more frames representing the open and closed state.
+  include: _examples/sidemenu.html
+  hint: "Try below: click menu to open it"
+  iframe: https://cdn.layerjs.org/examples/sidemenu/index.html  
+-
+  title: "Lightbox / Modal"
+  description: A lighbox, modal or pop-up can be easily created with a layer on top of the content which initially does not show a frame. This layer can be filled with a lightbox' content upon link click.
+  include: _examples/lightbox.html
+  hint: "Try below: click link to open lightbox"
+  iframe: https://cdn.layerjs.org/examples/lightbox/index.html  
