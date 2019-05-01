@@ -23,13 +23,13 @@ sitemap:
     <div class="row">
       <div class="col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-0">
         <div class="whitebox">
-          {{ example.description }}
+          <p>{{ example.description }}</p>
           <div lj-type="stage" lj-auto-height="true">
             <div lj-type="layer" lj-name="exldesc{{ forloop.index }}" lj-default-frame="!none" lj-native-scroll="false"
               lj-no-url="true">
               <div lj-type="frame" lj-fit-to="responsive-width" lj-transition="none">
-                <br>
-                {{ example.longdesc }}
+                <!-- see https://stackoverflow.com/questions/15917463/embedding-markdown-in-jekyll-html -->
+                {% markdown %}{{ example.longdesc }}{% endmarkdown %}
               </div>
             </div>
           </div>
@@ -43,15 +43,14 @@ sitemap:
           </a>
         </div>
         <div class="whitebox">
-          <h4 class="sample-header">Code structure</h4>
+          <h4 class="sample-header">Code sketch</h4>
           {% highlight html %}{% include {{ example.include }} %}{% endhighlight %}
-          <a class="btn btn-key hidden-xs" data-toggle="collapse" data-parent="#panels1" href="#collapse1">show full
-            example</a>
+          <a class="btn btn-key hidden-xs" target="_blank" href="{{ example.playground }}">See full code on CodePen</a>
         </div>
       </div>
       <div class="col-md-5 col-sm-6">
         <div class="trybox">
-          <h4 class="sample-header">Try below: swipe or click arrows</h4>
+          <h4 class="sample-header">{{ example.hint }}</h4>
           <iframe src="{{ example.iframe }}" width="100%" height="450px;" frameborder="0"></iframe>
         </div>
       </div>

@@ -1,31 +1,93 @@
 -
   title: Slider
   description: A slider needs a single stage, a layer and one frame for each slide. Use regular links to control the slider.
-  longdesc: These links will reference a specific frame (e.g. "#frame1") or use special names like "#slider.!next" or "#slider.!prev", where slider is the layer name. lj-default-frame will indicate the frame that is shown initally.
+  longdesc: The different layerJS elements are defined by the `lj-type` attribute. 
+    lj-default-frame will indicate which frame is shown initally in the layer. 
+    The example shows 2 frames in the layer, repesenting 2 slides. 
+
+
+    The controls are normal HTML links that reference a specific frame (e.g. `#frame1`) 
+    or use special names like `#slider.!next` or `#slider.!prev` which indicate the next or previous frame of the layer `slider`.
   include: _examples/slider.html
   hint: "Try below: swipe or click arrows"
   iframe: https://cdn.layerjs.org/examples/slider/index.html
+  playground: https://codepen.io/thomnah/pen/YMoXYo/left?editors=1100
 -
   title: Zoom UI
   description: Zooming patterns, as often found in mobile apps, can be created with the "canvas" layout. Here, frames have fixed positions on the "canvas" and can be scaled or rotated. During transitions, the canvas is transformed (moved, scaled, rotated) such that the active frame fits into the stage.
+  longdesc: For this example we need 2 nested stages. The layers in both stages use the `canvas`layout. 
+  
+  
+    In the outer stage there are 2 frames, which are positioned and sized such that one frame defines the 
+    zoomed out view and the other frame defines a view zoomed in on the left most thumbnail. The positioning is done in CSS.
+
+
+    The nested stage is inside the zoomed in frame of the outer structure. It contains one frame for each thumbnail. 
+    These frames are also positioned in CSS, one next to the other with a gap between them.
+
+    
+    The zoom interaction is simply linking between the `zoomin` and `zoomout` frame. There is a link on top 
+    of the thumbnails and, in the zoomed in state, there is a floating button (also a link) that will zoom out again.
+
+
+    Thumbnail frames itself have gestures defined using `lj-neighbors.*` attributes. These link from each 
+    frame to the next and preivous frames and are triggered through left/right swipes on touchscreens or touchpads.
+
+
+    The thumbnail frames do not actually contain thumbnails but really the whole subpage (iframes in the example). 
+    When they are zoomed out there is a transparent overerlay (a link) on top of them, but when they are zoomed in, 
+    they are fully functional.
   include: _examples/zoom.html
-  hint: "Try below: swipe or click thumbs"
+  hint: "Try below: click or swipe thumbnails"
   iframe: https://cdn.layerjs.org/examples/zoom-noiframe/index.html
+  playground: https://codepen.io/thomnah/pen/dLBGed/left?editors=1100#0
 -
   title: Parallax
-  description: Parallax effects can be created with two overlapping layers in a stage. If the frame in the upper layer is longer than the stage, it will scroll within the stage. Transparent areas in this frame will reveal the lower non-scrolling frame created the parallax effect.
+  description: Parallax effects can be created with two overlapping layers in a stage. If the frame in the upper layer 
+    is longer than the stage, it will scroll within the stage. Transparent areas in this frame will reveal the lower 
+    non-scrolling frame creating the parallax effect.
+  longdesc: To create transparency it is necessary to leave the frame itself without any background color. 
+    Then put a background color to all elements that should have a background using CSS. Transparent areas should be 
+    given appropriate dimensions using CSS.
+
+
+    To have the background image fill the whole window using `lj-fit-to="cover"` on the frame containing the image.
   include: _examples/parallax.html
   hint: "Try below: scroll to see the parallax"
   iframe: https://cdn.layerjs.org/examples/parallax/index.html
+  playground: https://codepen.io/thomnah/pen/YMoqVM/left?editors=1100#0
 -
   title: Side Menu
-  description: A layer can be used to create a menu floating on top of the regular content. The menu can be opened and closed using layerJS transitions between two or more frames representing the open and closed state.
+  description: A layer can be used to create a menu floating on top of the regular content. Using two frames you can have an open and a closed state of the menu.
+  longdesc: We again create a stage on the top level an put a layer for our main content in it. On top of that layer create another layer for the menu (`menulayer`).
+    
+
+    Then create 2 frames, one for the closed state (containing hamburger icon) and one for the open state which should open as a side menu. The closed menu gets `lj-fit-to="responsive-width"`
+    to make the menu fill the full width, the side menu should attach to the left side and gets `lj-fit-to="responsive-height"` and its width will be set in CSS.
+
+
+    The closed menu should fade in and out which is instructed by `lj-transition="fade"` while the side menu should swipe in from left which is set by `lj-transition="right"`.
+
+
+    The transitions can be triggered either by links (e.g. `href="#sidemenu"` or by gestures using `lj-neighbors.*`.
   include: _examples/sidemenu.html
   hint: "Try below: click menu to open it"
-  iframe: https://cdn.layerjs.org/examples/sidemenu/index.html  
+  iframe: https://cdn.layerjs.org/examples/sidemenu/index.html 
+  playground: https://codepen.io/thomnah/pen/MRMJEz/left?editors=1100#0
 -
   title: "Lightbox / Modal"
-  description: A lighbox, modal or pop-up can be easily created with a layer on top of the content which initially does not show a frame. This layer can be filled with a lightbox' content upon link click.
+  description: A lighbox, modal or pop-up can be easily created with a layer on top of the content which initially does not show a frame. 
+  longdesc:
+    Within the top stage, a popup layer needs to be created on top of the content layer. This layer contains a frame which contains the content of the popup.
+    
+    
+    The `lj-default-frame` needs to be `!none` in order to not show the popup at the beginning. Using a regular link with the frame name of the popup 
+    (e.g. `href="#popup"`) the popup can be shown. Using `href="#popup-layer.!none"` the popup can be hidden again.
+
+
+    You can definitely place more frames into the popup layer if you need more different popups in you site. You can
+    open and close them as indicated above.
   include: _examples/lightbox.html
   hint: "Try below: click link to open lightbox"
-  iframe: https://cdn.layerjs.org/examples/lightbox/index.html  
+  iframe: https://cdn.layerjs.org/examples/lightbox/index.html
+  playground: https://codepen.io/thomnah/pen/xeoqaL/left?editors=1100#0
