@@ -12,6 +12,8 @@
   hint: "Try below: swipe or click arrows"
   iframe: https://cdn.layerjs.org/examples/slider/index.html
   playground: https://codepen.io/thomnah/pen/YMoXYo/left?editors=1100
+  playgroundm: https://codepen.io/thomnah/pen/YMoXYo/top?editors=1100
+
 -
   title: Zoom UI
   description: Zooming patterns, as often found in mobile apps, can be created with the "canvas" layout. Here, frames have fixed positions on the "canvas" and can be scaled or rotated. During transitions, the canvas is transformed (moved, scaled, rotated) such that the active frame fits into the stage.
@@ -41,21 +43,41 @@
   hint: "Try below: click or swipe thumbnails"
   iframe: https://cdn.layerjs.org/examples/zoom-noiframe/index.html
   playground: https://codepen.io/thomnah/pen/dLBGed/left?editors=1100#0
+  playgroundm: https://codepen.io/thomnah/pen/dLBGed/top?editors=1100#0
+ 
 -
-  title: Parallax
-  description: Parallax effects can be created with two overlapping layers in a stage. If the frame in the upper layer 
-    is longer than the stage, it will scroll within the stage. Transparent areas in this frame will reveal the lower 
-    non-scrolling frame creating the parallax effect.
-  longdesc: To create transparency it is necessary to leave the frame itself without any background color. 
-    Then put a background color to all elements that should have a background using CSS. Transparent areas should be 
-    given appropriate dimensions using CSS.
+  title: "Lightbox / Modal"
+  description: A lighbox, modal or pop-up can be easily created with a layer on top of the content which initially does not show a frame. 
+  longdesc:
+    Within the top stage, a popup layer needs to be created on top of the content layer. This layer contains a frame which contains the content of the popup.
+    
+    
+    The `lj-default-frame` needs to be `!none` in order to not show the popup at the beginning. Using a regular link with the frame name of the popup 
+    (e.g. `href="#popup"`) the popup can be shown. Using `href="#popup-layer.!none"` the popup can be hidden again.
 
 
-    To have the background image fill the whole window using `lj-fit-to="cover"` on the frame containing the image.
-  include: _examples/parallax.html
-  hint: "Try below: scroll to see the parallax"
-  iframe: https://cdn.layerjs.org/examples/parallax/index.html
-  playground: https://codepen.io/thomnah/pen/YMoqVM/left?editors=1100#0
+    You can definitely place more frames into the popup layer if you need more different popups in you site. You can
+    open and close them as indicated above.
+  include: _examples/lightbox.html
+  hint: "Try below: click link to open lightbox"
+  iframe: https://cdn.layerjs.org/examples/lightbox/index.html
+  playground: https://codepen.io/thomnah/pen/xeoqaL/left?editors=1100#0
+  playgroundm: https://codepen.io/thomnah/pen/xeoqaL/top?editors=1100#0
+-
+  title: Collapsible / Accordion 
+  description: A collapsible can be created very similar to a slider. It has only one frame inside the stage/layer and can alternate between 
+    showing that frame and not showing it.
+  longdesc: The stage needs to have the attribute `lj-auto-height="true"`in order to adapt its height to the height of the frame. If no frame is shown, 
+    the stage height will become 0. With `lj-default-frame="!none"` the stage will be collapsed by default. 
+
+    
+    Use the special links `href="#collapse-layer.!toggle"`, `href="#collapse-layer.!none"` and `href="#collapse-layer.!next"` to toggle, collapse or extend the collapsible.
+  include: _examples/collapse.html
+  hint: "Try below: click to collapse/expand"
+  iframe: https://cdn.layerjs.org/examples/collapse/index.html
+  playground: https://codepen.io/thomnah/pen/PgrjoG/left?editors=1100#0
+  playgroundm: https://codepen.io/thomnah/pen/PgrjoG/top?editors=1100#0
+ 
 -
   title: Side Menu
   description: A layer can be used to create a menu floating on top of the regular content. Using two frames you can have an open and a closed state of the menu.
@@ -74,20 +96,22 @@
   hint: "Try below: click menu to open it"
   iframe: https://cdn.layerjs.org/examples/sidemenu/index.html 
   playground: https://codepen.io/thomnah/pen/MRMJEz/left?editors=1100#0
+  playgroundm: https://codepen.io/thomnah/pen/MRMJEz/top?editors=1100#0
+
 -
-  title: "Lightbox / Modal"
-  description: A lighbox, modal or pop-up can be easily created with a layer on top of the content which initially does not show a frame. 
-  longdesc:
-    Within the top stage, a popup layer needs to be created on top of the content layer. This layer contains a frame which contains the content of the popup.
-    
-    
-    The `lj-default-frame` needs to be `!none` in order to not show the popup at the beginning. Using a regular link with the frame name of the popup 
-    (e.g. `href="#popup"`) the popup can be shown. Using `href="#popup-layer.!none"` the popup can be hidden again.
+  title: Parallax
+  description: Parallax effects can be created with two overlapping layers in a stage. If the frame in the upper layer 
+    is longer than the stage, it will scroll within the stage. Transparent areas in this frame will reveal the lower 
+    non-scrolling frame creating the parallax effect.
+  longdesc: To create transparency it is necessary to leave the frame itself without any background color. 
+    Then put a background color to all elements that should have a background using CSS. Transparent areas should be 
+    given appropriate dimensions using CSS.
 
 
-    You can definitely place more frames into the popup layer if you need more different popups in you site. You can
-    open and close them as indicated above.
-  include: _examples/lightbox.html
-  hint: "Try below: click link to open lightbox"
-  iframe: https://cdn.layerjs.org/examples/lightbox/index.html
-  playground: https://codepen.io/thomnah/pen/xeoqaL/left?editors=1100#0
+    To have the background image fill the whole window using `lj-fit-to="cover"` on the frame containing the image.
+  include: _examples/parallax.html
+  hint: "Try below: scroll to see the parallax"
+  iframe: https://cdn.layerjs.org/examples/parallax/index.html
+  playground: https://codepen.io/thomnah/pen/YMoqVM/left?editors=1100#0
+  playgroundm: https://codepen.io/thomnah/pen/YMoqVM/top?editors=1100#0
+
